@@ -10,6 +10,8 @@ public class ShapeList {
 
 
    public void removeShape(){
-       shapes.remove(shapes.size());
+       shapes.remove(shapes.size()-1);
    }
+
+
 }

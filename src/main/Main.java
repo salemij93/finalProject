@@ -180,9 +180,11 @@ public class Main {
                     }
 
                 }
-            shapeslist.addShape(newshape);
+                CreateShapeCommand createShape = new CreateShapeCommand(shapeslist,newshape);
+                createShape.runCommand();
 
             }
+
 
 
         });
