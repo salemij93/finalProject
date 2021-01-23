@@ -1,6 +1,5 @@
 package main;
 
-import main.IUndoRedo;
 
 import java.util.Stack;
 
