@@ -212,7 +212,7 @@ public class Main {
                 CreateShapeCommand createShape = new CreateShapeCommand(shapeslist,newshape);
                 createShape.runCommand();
                 graphics2d.setColor(Color.WHITE);
-                graphics2d.drawRect(0,0,Integer.MAX_VALUE,Integer.MAX_VALUE);
+                graphics2d.drawRect(0,0,paintCanvas.getWidth(), paintCanvas.getHeight());
 
             }
 
