@@ -74,7 +74,7 @@ public class Main {
 
                         drawShape(appState.getActiveShapeType().toString(),
                                 e.getX(),e.getY());
-                        graphics2d.setColor(Color.white);
+                        graphics2d.setColor(Color.WHITE);
                         graphics2d.drawRect(0,0,paintCanvas.getWidth(),paintCanvas.getHeight());
 
                          }
@@ -89,6 +89,7 @@ public class Main {
             }
             Shape newshape = new Shape(graphics2d);
             public void drawShape(String shapeType, int x, int y){
+
 
                 switch (appState.getActivePrimaryColor().toString()){
                     case "BLACK" -> {graphics2d.setColor(Color.BLACK);
