@@ -72,8 +72,6 @@ public class Main {
                         drawShape(appState.getActiveShapeType().toString(),
                                 e.getX(),e.getY());
                          }
-
-
                     case "SELECT" -> System.out.println("Mouse Released Select: ("
                             + e.getX() + ", " + e.getY() + ")");
                     case "MOVE" -> System.out.println("Mouse Released Move: ("
