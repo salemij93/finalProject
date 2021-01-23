@@ -2,7 +2,7 @@ package main;
 
 import java.awt.*;
 
-public class Shape {
+public class Shape implements IShape{
 
     private int x1;
     private int x2;
