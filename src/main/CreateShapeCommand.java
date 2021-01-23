@@ -14,23 +14,22 @@ public class CreateShapeCommand implements ICommand, IUndoRedo{
     @Override
     public void runCommand() {
         shapeList.addShape(newshape);
-        CommandHistory.add(this);
         shapeList.drawAll();
+        CommandHistory.add(this);
+
     }
 
     @Override
     public void undoCommand() {
-        UndoCommand undo = new UndoCommand();
-        undo.runCommand();
         shapeList.removeShape();
         shapeList.drawAll();
+        System.out.println(shapeList.shapeListize());
     }
 
     @Override
     public void redoCommand() {
-    RedoCommand redo = new RedoCommand();
-    redo.runCommand();
     shapeList.addShape(newshape);
     shapeList.drawAll();
+        System.out.println(shapeList.shapeListize());
     }
 }

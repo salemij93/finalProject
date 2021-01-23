@@ -9,7 +9,7 @@ public class ShapeList {
     }
 
     public void removeShape() {
-        shapes.remove(shapes.size() - 1);
+        shapes.remove(shapes.size()-1);
     }
 
     public void drawAll() {
@@ -18,5 +18,9 @@ public class ShapeList {
         shape.draw();
         }
 
+    }
+
+    public int shapeListize(){
+        return shapes.size();
     }
 }
