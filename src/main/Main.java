@@ -74,8 +74,7 @@ public class Main {
 
                         drawShape(appState.getActiveShapeType().toString(),
                                 e.getX(),e.getY());
-                        graphics2d.setColor(Color.WHITE);
-                        graphics2d.drawRect(0,0,paintCanvas.getWidth(),paintCanvas.getHeight());
+
 
                          }
                     case "SELECT" -> System.out.println("Mouse Released Select: ("
@@ -212,6 +211,8 @@ public class Main {
 
                 CreateShapeCommand createShape = new CreateShapeCommand(shapeslist,newshape);
                 createShape.runCommand();
+                graphics2d.setColor(Color.WHITE);
+                graphics2d.drawRect(0,0,Integer.MAX_VALUE,Integer.MAX_VALUE);
 
             }
 

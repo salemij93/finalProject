@@ -28,7 +28,8 @@ public class CreateShapeCommand implements ICommand, IUndoRedo{
 
     @Override
     public void redoCommand() {
-    shapeList.addShape(newshape);
-    shapeList.drawAll();
+        shapeList.addShape(newshape);
+        shapeList.drawAll();
+
     }
 }
