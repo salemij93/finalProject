@@ -20,7 +20,7 @@ public class ShapeList {
 
     }
 
-    public int shapeListize(){
+    public int shapeListsize(){
         return shapes.size();
     }
 }

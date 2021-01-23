@@ -1,6 +1,8 @@
 package main;
 
 
+import java.awt.*;
+
 public class CreateShapeCommand implements ICommand, IUndoRedo{
 
     private ShapeList shapeList;
@@ -8,6 +10,7 @@ public class CreateShapeCommand implements ICommand, IUndoRedo{
     CreateShapeCommand(ShapeList shapeList, Shape newshape){
         this.shapeList = shapeList;
         this.newshape = newshape;
+
     }
 
 
@@ -23,13 +26,13 @@ public class CreateShapeCommand implements ICommand, IUndoRedo{
     public void undoCommand() {
         shapeList.removeShape();
         shapeList.drawAll();
-        System.out.println(shapeList.shapeListize());
+        System.out.println(shapeList.shapeListsize());
     }
 
     @Override
     public void redoCommand() {
     shapeList.addShape(newshape);
     shapeList.drawAll();
-        System.out.println(shapeList.shapeListize());
+        System.out.println(shapeList.shapeListsize());
     }
 }
