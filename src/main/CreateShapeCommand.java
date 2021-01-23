@@ -23,6 +23,7 @@ public class CreateShapeCommand implements ICommand, IUndoRedo{
         UndoCommand undo = new UndoCommand();
         undo.runCommand();
         shapeList.removeShape();
+        shapeList.drawAll();
     }
 
     @Override
@@ -30,5 +31,6 @@ public class CreateShapeCommand implements ICommand, IUndoRedo{
     RedoCommand redo = new RedoCommand();
     redo.runCommand();
     shapeList.addShape(newshape);
+    shapeList.drawAll();
     }
 }
