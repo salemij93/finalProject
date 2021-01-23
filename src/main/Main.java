@@ -47,10 +47,11 @@ public class Main {
 //        graphics2d.setStroke(stroke);
 //        graphics2d.setColor(Color.BLACK);
 //        graphics2d.drawRect(7, 8, 210, 410);
+
         paintCanvas.addMouseListener(new MouseAdapter(){
 
-            int x1;
-            int x2;
+            private int x1;
+            private int x2;
             int x3;
             int y1;
             int y2;
