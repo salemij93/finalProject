@@ -1,6 +1,9 @@
 package main;
 
+import java.awt.*;
+
 public class Shape {
+
     private int x1;
     private int x2;
     private int x3;
@@ -9,7 +12,11 @@ public class Shape {
     private int y3;
     private String shapeName;
     private String shapeColor;
+    private Graphics2D graphics2d;
 
+    Shape(Graphics2D graphics2d){
+        this.graphics2d = graphics2d;
+    }
 
     public String getShapeColor() {
         return shapeColor;
@@ -72,5 +79,17 @@ public class Shape {
 
     public void setY3(int y3) {
         this.y3 = y3;
+    }
+
+    public  void draw(){
+
+        switch (shapeName) {
+            case "RECTANGLE" -> graphics2d.fillRect(x1,y1,x2,y2);
+
+            case "ELLIPSE" -> graphics2d.fillOval(x1, y1, x2, y2);
+
+            case "TRIANGLE" -> graphics2d.fillPolygon(new int[]{x1,x2,x3},new int[]{y1,y2,y3},3);
+
+        }
     }
 }

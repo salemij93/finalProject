@@ -51,11 +51,11 @@ public class Main {
         paintCanvas.addMouseListener(new MouseAdapter(){
 
             private int x1;
-            int x2;
-            int x3;
+            private int x2;
+            private int x3;
             private int y1;
-            int y2;
-            int y3;
+            private int y2;
+            private int y3;
 
             public void mousePressed(MouseEvent e) {
                 System.out.println("Mouse Pressed: ("
@@ -83,7 +83,7 @@ public class Main {
 
 
             }
-            Shape newshape = new Shape();
+            Shape newshape = new Shape(graphics2d);
             public void drawShape(String shapeType, int x, int y){
                 switch (appState.getActivePrimaryColor().toString()){
                     case "BLACK" -> {graphics2d.setColor(Color.BLACK);
@@ -121,20 +121,45 @@ public class Main {
                     if (x>x1 && y>y1){
                         x3 = x1;
                         y3 = y;
-                        graphics2d.fillPolygon(new int[]{x1,x,x3},new int[]{y1,y,y3},3);
+                        newshape.setshapeName("TRIANGLE");
+                        newshape.setX1(x1);
+                        newshape.setX2(x);
+                        newshape.setY1(y1);
+                        newshape.setY2(y);
+                        newshape.setY3(y3);
+                        newshape.setX3(x3);
+
                     }else if (x>x1 && y<y1){
                         x3 = x1;
                         y3 = y;
-                        graphics2d.fillPolygon(new int[]{x1,x,x3},new int[]{y1,y,y3},3);
+                        newshape.setshapeName("TRIANGLE");
+                        newshape.setX1(x1);
+                        newshape.setX2(x);
+                        newshape.setY1(y1);
+                        newshape.setY2(y);
+                        newshape.setY3(y3);
+                        newshape.setX3(x3);
 
                     }else if (x1>x && y1>y){
                         x3 = x;
                         y3 = y1;
-                        graphics2d.fillPolygon(new int[]{x1,x,x3},new int[]{y1,y,y3},3);
+                        newshape.setshapeName("TRIANGLE");
+                        newshape.setX1(x1);
+                        newshape.setX2(x);
+                        newshape.setY1(y1);
+                        newshape.setY2(y);
+                        newshape.setY3(y3);
+                        newshape.setX3(x3);
                     }else if (x1>x && y1<y){
                         x3 = x;
                         y3 = y1;
-                        graphics2d.fillPolygon(new int[]{x1,x,x3},new int[]{y1,y,y3},3);
+                        newshape.setshapeName("TRIANGLE");
+                        newshape.setX1(x1);
+                        newshape.setX2(x);
+                        newshape.setY1(y1);
+                        newshape.setY2(y);
+                        newshape.setY3(y3);
+                        newshape.setX3(x3);
                     }}else {
                     if (x1>x){
                         x2 = Math.abs(x-x1);
@@ -158,7 +183,6 @@ public class Main {
 
                 switch (shapeType) {
                     case "RECTANGLE" -> {
-                        graphics2d.fillRect(x1,y1,x2,y2);
                         newshape.setshapeName("RECTANGLE");
                         newshape.setX1(x1);
                         newshape.setX2(x2);
@@ -169,7 +193,6 @@ public class Main {
 
                         }
                     case "ELLIPSE" -> {
-                        graphics2d.fillOval(x1, y1, x2, y2);
                         newshape.setshapeName("ELLIPSE");
                         newshape.setX1(x1);
                         newshape.setX2(x2);

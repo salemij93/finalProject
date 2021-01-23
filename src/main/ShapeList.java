@@ -6,8 +6,8 @@ public class ShapeList {
 
     public void addShape(Shape newshapes){
         shapes.add(newshapes);
-    }
 
+    }
 
    public void removeShape(){
        shapes.remove(shapes.size()-1);
