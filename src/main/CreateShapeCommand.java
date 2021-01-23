@@ -1,8 +1,6 @@
 package main;
 
 
-import java.awt.*;
-
 public class CreateShapeCommand implements ICommand, IUndoRedo{
 
     private ShapeList shapeList;
