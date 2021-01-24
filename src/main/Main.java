@@ -24,14 +24,7 @@ public class Main {
         controller.setup();
         ShapeList shapeslist = new ShapeList();
 
-        // For example purposes only; remove all lines below from your final project.
 
-//        try {
-//            Thread.sleep(500);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//
 //        // Filled in rectangle
         Graphics2D graphics2d = paintCanvas.getGraphics2D();
 //        graphics2d.setColor(Color.GREEN);
