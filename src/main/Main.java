@@ -24,8 +24,7 @@ public class Main {
 
         MyMouseListener myMouseListener = new MyMouseListener(paintCanvas,appState);
         paintCanvas.addMouseListener(myMouseListener);
-//        graphics2d.setColor(Color.GREEN);
-//        graphics2d.fillRect(12, 13, 200, 400);
+
 //
 //        // Outlined rectangle
 //        graphics2d.setStroke(new BasicStroke(5));
