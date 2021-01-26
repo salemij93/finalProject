@@ -1,7 +1,6 @@
 package main;
 
-import view.interfaces.PaintCanvasBase;
-import model.persistence.ApplicationState;
+
 
 import java.awt.*;
 
@@ -86,7 +85,7 @@ public class Shape implements IShape{
 
     public  void draw(){
 
-        switch (shapeColor){
+        switch (getShapeColor()){
             case "BLACK" -> graphics2d.setColor(Color.BLACK);
 
 
@@ -107,7 +106,7 @@ public class Shape implements IShape{
             case "YELLOW" -> graphics2d.setColor(Color.YELLOW);
         }
 
-        switch (shapeName) {
+        switch (getshapeName()) {
             case "RECTANGLE" -> graphics2d.fillRect(x1,y1,x2,y2);
 
             case "ELLIPSE" -> graphics2d.fillOval(x1, y1, x2, y2);

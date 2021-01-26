@@ -20,7 +20,7 @@ public class Main {
         ApplicationState appState = new ApplicationState(uiModule);
         IJPaintController controller = new JPaintController(uiModule, appState);
         controller.setup();
-        ShapeList shapeslist = new ShapeList();
+//        ShapeList shapeslist = new ShapeList();
 
 
 //        // Filled in rectangle

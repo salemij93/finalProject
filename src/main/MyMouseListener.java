@@ -21,7 +21,6 @@ public class MyMouseListener extends MouseAdapter{
 
     }
 
-    ShapeList shapeslist = new ShapeList();
 
     private int x1;
     private int x2;
@@ -61,7 +60,7 @@ public class MyMouseListener extends MouseAdapter{
     }
 
     public void drawShape(String shapeType, int x, int y){
-
+        ShapeList shapeslist = new ShapeList(graphics2d);
         Shape newshape = new Shape(graphics2d);
         switch (appState.getActivePrimaryColor().toString()){
             case "BLACK" -> {graphics2d.setColor(Color.BLACK);
@@ -184,6 +183,7 @@ public class MyMouseListener extends MouseAdapter{
 
         CreateShapeCommand createShape = new CreateShapeCommand(shapeslist,newshape);
         createShape.runCommand();
+
 
 
     }
