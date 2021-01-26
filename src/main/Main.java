@@ -20,11 +20,8 @@ public class Main {
         ApplicationState appState = new ApplicationState(uiModule);
         IJPaintController controller = new JPaintController(uiModule, appState);
         controller.setup();
-//        ShapeList shapeslist = new ShapeList();
 
 
-//        // Filled in rectangle
-//        Graphics2D graphics2d = paintCanvas.getGraphics2D();
         MyMouseListener myMouseListener = new MyMouseListener(paintCanvas,appState);
         paintCanvas.addMouseListener(myMouseListener);
 //        graphics2d.setColor(Color.GREEN);
