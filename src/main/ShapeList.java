@@ -1,7 +1,5 @@
 package main;
-import view.interfaces.PaintCanvasBase;
 
-import java.awt.*;
 import java.util.ArrayList;
 
 public class ShapeList {
