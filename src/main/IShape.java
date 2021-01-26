@@ -1,5 +1,6 @@
 package main;
 
 public interface IShape {
-    public void draw();
+    void draw();
+    void undraw();
 }

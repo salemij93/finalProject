@@ -23,6 +23,7 @@ public class CreateShapeCommand implements ICommand, IUndoRedo{
 
     @Override
     public void undoCommand() {
+        shapeList.undrawAll();
         shapeList.removeShape();
         shapeList.drawAll();
         System.out.println(shapeList.shapeListsize());
