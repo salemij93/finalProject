@@ -184,8 +184,8 @@ public class MyMouseListener extends MouseAdapter{
 
         CreateShapeCommand createShape = new CreateShapeCommand(shapeslist,newshape);
         createShape.runCommand();
-//        graphics2d.setColor(Color.WHITE);
-//        graphics2d.drawRect(0,0,paintCanvas.getWidth(), paintCanvas.getHeight());
+        graphics2d.setColor(Color.WHITE);
+        graphics2d.drawRect(0,0,paintCanvas.getWidth(), paintCanvas.getHeight());
 
     }
 

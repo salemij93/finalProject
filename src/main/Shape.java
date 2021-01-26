@@ -86,6 +86,27 @@ public class Shape implements IShape{
 
     public  void draw(){
 
+        switch (shapeColor){
+            case "BLACK" -> graphics2d.setColor(Color.BLACK);
+
+
+            case "RED" -> graphics2d.setColor(Color.RED);
+
+            case "BLUE" -> graphics2d.setColor(Color.BLUE);
+
+            case "CYAN" -> graphics2d.setColor(Color.CYAN);
+
+            case "DARK_GRAY" -> graphics2d.setColor(Color.DARK_GRAY);
+            case "GRAY" -> graphics2d.setColor(Color.GRAY);
+            case "GREEN" -> graphics2d.setColor(Color.GREEN);
+            case "LIGHT_GRAY" -> graphics2d.setColor(Color.LIGHT_GRAY);
+            case "MAGENTA" -> graphics2d.setColor(Color.MAGENTA);
+            case "ORANGE" -> graphics2d.setColor(Color.ORANGE);
+            case "PINK" -> graphics2d.setColor(Color.PINK);
+            case "WHITE" -> graphics2d.setColor(Color.WHITE);
+            case "YELLOW" -> graphics2d.setColor(Color.YELLOW);
+        }
+
         switch (shapeName) {
             case "RECTANGLE" -> graphics2d.fillRect(x1,y1,x2,y2);
 
