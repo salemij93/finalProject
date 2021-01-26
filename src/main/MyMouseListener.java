@@ -5,17 +5,21 @@ import java.awt.event.*;
 import model.persistence.ApplicationState;
 import view.interfaces.PaintCanvasBase;
 
+
 public class MyMouseListener extends MouseAdapter{
 
     private PaintCanvasBase paintCanvas;
     private ApplicationState appState;
-    ShapeList shapeslist = new ShapeList();
-    MyMouseListener(PaintCanvasBase paintCanvas,ApplicationState appState){
-        this.paintCanvas = paintCanvas;
-        this.appState = appState;
+    private Graphics2D graphics2d;
 
+    MyMouseListener(PaintCanvasBase PaintCanvas,ApplicationState AppState){
+
+        this.paintCanvas = PaintCanvas;
+        this.appState = AppState;
+        this.graphics2d = PaintCanvas.getGraphics2D();
     }
-    Graphics2D graphics2d = paintCanvas.getGraphics2D();
+
+    ShapeList shapeslist = new ShapeList();
     private int x1;
     private int x2;
     private int x3;
