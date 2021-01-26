@@ -1,5 +1,8 @@
 package main;
 
+import view.interfaces.PaintCanvasBase;
+import model.persistence.ApplicationState;
+
 import java.awt.*;
 
 public class Shape implements IShape{
@@ -14,8 +17,8 @@ public class Shape implements IShape{
     private String shapeColor;
     private Graphics2D graphics2d;
 
-    Shape(Graphics2D graphics2d){
-        this.graphics2d = graphics2d;
+    Shape(Graphics2D graphics2D){
+        this.graphics2d = graphics2D;
     }
 
     public String getShapeColor() {

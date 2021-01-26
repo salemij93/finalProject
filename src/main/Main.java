@@ -26,9 +26,9 @@ public class Main {
 
 
 //        // Filled in rectangle
-        Graphics2D graphics2d = paintCanvas.getGraphics2D();
+//        Graphics2D graphics2d = paintCanvas.getGraphics2D();
         MyMouseListener myMouseListener = new MyMouseListener(paintCanvas,appState);
-
+        paintCanvas.addMouseListener(myMouseListener);
 //        graphics2d.setColor(Color.GREEN);
 //        graphics2d.fillRect(12, 13, 200, 400);
 //
