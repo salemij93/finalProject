@@ -23,6 +23,7 @@ public class Main {
         IJPaintController controller = new JPaintController(uiModule, appState);
         controller.setup();
         ShapeList shapeslist = new ShapeList();
+        MyMouseListener myMouseListener = new MyMouseListener(paintCanvas,appState);
 
 
 //        // Filled in rectangle
