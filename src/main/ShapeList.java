@@ -42,8 +42,8 @@ public class ShapeList {
             int[] rectB = new int[4];
             rectB[0] = shape.getX1();
             rectB[1] = shape.getY1();
-            rectB[2] = shape.getX2() + shape.getX1();
-            rectB[3] = shape.getY2() + shape.getY1();
+            rectB[2] = shape.getX2();
+            rectB[3] = shape.getY2();
 
         return rectB;
     }
@@ -52,11 +52,20 @@ public class ShapeList {
     public void updateAll(int[] rectA){
         for (int i = 0; i < shapes.size(); i++) {
             int[] rectB = shapeLocations(i);
+            IShape shape = shapes.get(i);
+            if(
+                    rectA[0]< rectB[0] + rectB[2] &&
+                            rectA[0] + rectA[2] > rectB[0] &&
+                            rectA[1]< rectB[1] + rectB[3] &&
+                            rectA[1]+ rectA[3] > rectB[1]
+            ){
+                System.out.println("select shape " + i);
 
-            if (!(rectA[0] < rectB[2] && rectA[2] > rectB[0] &&
-                    rectA[1] < rectB[3] && rectA[3] > rectB[1])) {
-                System.out.println("selected shape " + i);
+                shape.updateSate(true);
+            }else{
+                shape.updateSate(false);
             }
+
 
         }
     }

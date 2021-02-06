@@ -55,7 +55,7 @@ public class MyMouseListener extends MouseAdapter{
             case "MOVE" -> {
                 System.out.println("Mouse Released Move: ("
                         + e.getX() + ", " + e.getY() + ")");
-                moveShape();
+                moveShape(e.getX(),e.getY());
 
             }
         }
@@ -244,7 +244,7 @@ public class MyMouseListener extends MouseAdapter{
             y2 = Math.abs(y - y1);
 
         }
-        int[] rectA = new int[]{x,y,x1,y1 };
+        int[] rectA = new int[]{x1,y1,x2,y2 };
         shapeslist.updateAll(rectA);
 
 
@@ -252,7 +252,9 @@ public class MyMouseListener extends MouseAdapter{
 
 
 
-    public void moveShape(){
+    public void moveShape(int x, int y){
+        int deltaX = x-x1;
+        int deltaY = y-y1;
         MoveShapeCommand moveShape = new MoveShapeCommand();
         moveShape.runCommand();
     }

@@ -7,4 +7,5 @@ public interface IShape {
     int getY2();
     void draw();
     void undraw();
+    void updateSate(boolean selected);
 }
