@@ -43,11 +43,8 @@ public class MyMouseListener extends MouseAdapter{
         switch (appState.getActiveMouseMode().toString()) {
             case "DRAW" -> {System.out.println("Mouse Released Draw: ("
                     + e.getX() + ", " + e.getY() + ")");
-
                 drawShape(appState.getActiveShapeType().toString(),
                         e.getX(),e.getY());
-
-
             }
             case "SELECT" -> System.out.println("Mouse Released Select: ("
                     + e.getX() + ", " + e.getY() + ")");
