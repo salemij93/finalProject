@@ -14,6 +14,7 @@ public class Shape implements IShape{
     private int y3;
     private String shapeName;
     private String shapeColor;
+    private String outlineColor;
     private String shadingType;
     private Graphics2D graphics2d;
 
@@ -27,6 +28,12 @@ public class Shape implements IShape{
 
     public void setShapeColor(String shapeColor) {
         this.shapeColor = shapeColor;
+    }
+
+    public String getoutlineColor() {  return outlineColor;   }
+
+    public void setoutlineColor(String shapeColor) {
+        this.outlineColor = outlineColor;
     }
 
     public void setshapeName(String shapeName) {
@@ -127,17 +134,63 @@ public class Shape implements IShape{
                 }
             }
             case "OUTLINE_AND_FILLED_IN" -> {
-                graphics2d.setStroke(new BasicStroke(5));
+                graphics2d.setStroke(new BasicStroke(2));
                 switch (getshapeName()) {
-                    case "RECTANGLE" -> {graphics2d.drawRect(x1,y1,x2,y2);
-                        graphics2d.fillRect(x1,y1,x2,y2);}
+                    case "RECTANGLE" -> {
+                        graphics2d.fillRect(x1,y1,x2,y2);
+                        switch (getoutlineColor()){
+                            case "BLACK" -> graphics2d.setColor(Color.BLACK);
+                            case "RED" -> graphics2d.setColor(Color.RED);
+                            case "BLUE" -> graphics2d.setColor(Color.BLUE);
+                            case "CYAN" -> graphics2d.setColor(Color.CYAN);
+                            case "DARK_GRAY" -> graphics2d.setColor(Color.DARK_GRAY);
+                            case "GRAY" -> graphics2d.setColor(Color.GRAY);
+                            case "GREEN" -> graphics2d.setColor(Color.GREEN);
+                            case "LIGHT_GRAY" -> graphics2d.setColor(Color.LIGHT_GRAY);
+                            case "MAGENTA" -> graphics2d.setColor(Color.MAGENTA);
+                            case "ORANGE" -> graphics2d.setColor(Color.ORANGE);
+                            case "PINK" -> graphics2d.setColor(Color.PINK);
+                            case "WHITE" -> graphics2d.setColor(Color.WHITE);
+                            case "YELLOW" -> graphics2d.setColor(Color.YELLOW);
+                        }
+                        graphics2d.drawRect(x1,y1,x2,y2);}
 
-                    case "ELLIPSE" -> {graphics2d.drawOval(x1, y1, x2, y2);
-                        graphics2d.fillOval(x1,y1,x2,y2);}
+                    case "ELLIPSE" -> {graphics2d.fillOval(x1, y1, x2, y2);
+                        switch (getoutlineColor()){
+                            case "BLACK" -> graphics2d.setColor(Color.BLACK);
+                            case "RED" -> graphics2d.setColor(Color.RED);
+                            case "BLUE" -> graphics2d.setColor(Color.BLUE);
+                            case "CYAN" -> graphics2d.setColor(Color.CYAN);
+                            case "DARK_GRAY" -> graphics2d.setColor(Color.DARK_GRAY);
+                            case "GRAY" -> graphics2d.setColor(Color.GRAY);
+                            case "GREEN" -> graphics2d.setColor(Color.GREEN);
+                            case "LIGHT_GRAY" -> graphics2d.setColor(Color.LIGHT_GRAY);
+                            case "MAGENTA" -> graphics2d.setColor(Color.MAGENTA);
+                            case "ORANGE" -> graphics2d.setColor(Color.ORANGE);
+                            case "PINK" -> graphics2d.setColor(Color.PINK);
+                            case "WHITE" -> graphics2d.setColor(Color.WHITE);
+                            case "YELLOW" -> graphics2d.setColor(Color.YELLOW);
+                        }
+                        graphics2d.drawOval(x1,y1,x2,y2);}
 
                     case "TRIANGLE" -> {
-                        graphics2d.drawPolygon(new int[]{x1, x2, x3}, new int[]{y1, y2, y3}, 3);
-                        graphics2d.fillPolygon(new int[]{x1,x2,x3},new int[]{y1,y2,y3},3);
+                        graphics2d.fillPolygon(new int[]{x1, x2, x3}, new int[]{y1, y2, y3}, 3);
+                        switch (getoutlineColor()){
+                            case "BLACK" -> graphics2d.setColor(Color.BLACK);
+                            case "RED" -> graphics2d.setColor(Color.RED);
+                            case "BLUE" -> graphics2d.setColor(Color.BLUE);
+                            case "CYAN" -> graphics2d.setColor(Color.CYAN);
+                            case "DARK_GRAY" -> graphics2d.setColor(Color.DARK_GRAY);
+                            case "GRAY" -> graphics2d.setColor(Color.GRAY);
+                            case "GREEN" -> graphics2d.setColor(Color.GREEN);
+                            case "LIGHT_GRAY" -> graphics2d.setColor(Color.LIGHT_GRAY);
+                            case "MAGENTA" -> graphics2d.setColor(Color.MAGENTA);
+                            case "ORANGE" -> graphics2d.setColor(Color.ORANGE);
+                            case "PINK" -> graphics2d.setColor(Color.PINK);
+                            case "WHITE" -> graphics2d.setColor(Color.WHITE);
+                            case "YELLOW" -> graphics2d.setColor(Color.YELLOW);
+                        }
+                        graphics2d.drawPolygon(new int[]{x1,x2,x3},new int[]{y1,y2,y3},3);
                     }
 
                 }

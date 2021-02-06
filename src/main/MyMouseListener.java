@@ -97,9 +97,36 @@ public class MyMouseListener extends MouseAdapter{
                 newshape.setShapeColor("WHITE");}
             case "YELLOW" -> {graphics2d.setColor(Color.YELLOW);
                 newshape.setShapeColor("YELLOW");}
-
-
         }
+        switch (appState.getActiveSecondaryColor().toString()){
+            case "BLACK" -> {graphics2d.setColor(Color.BLACK);
+                newshape.setoutlineColor("BLACK");}
+            case "RED" -> {graphics2d.setColor(Color.RED);
+                newshape.setoutlineColor("RED");}
+            case "BLUE" -> {graphics2d.setColor(Color.BLUE);
+                newshape.setoutlineColor("BLUE");}
+            case "CYAN" -> {graphics2d.setColor(Color.CYAN);
+                newshape.setoutlineColor("CYAN");}
+            case "DARK_GRAY" -> {graphics2d.setColor(Color.DARK_GRAY);
+                newshape.setoutlineColor("DARK_GRAY");}
+            case "GRAY" -> {graphics2d.setColor(Color.GRAY);
+                newshape.setoutlineColor("GRAY");}
+            case "GREEN" -> {graphics2d.setColor(Color.GREEN);
+                newshape.setoutlineColor("GREEN");}
+            case "LIGHT_GRAY" -> {graphics2d.setColor(Color.LIGHT_GRAY);
+                newshape.setoutlineColor("LIGHT_GRAY");}
+            case "MAGENTA" -> {graphics2d.setColor(Color.MAGENTA);
+                newshape.setoutlineColor("MAGENTA");}
+            case "ORANGE" -> {graphics2d.setColor(Color.ORANGE);
+                newshape.setoutlineColor("ORANGE");}
+            case "PINK" -> {graphics2d.setColor(Color.PINK);
+                newshape.setoutlineColor("PINK");}
+            case "WHITE" -> {graphics2d.setColor(Color.WHITE);
+                newshape.setoutlineColor("WHITE");}
+            case "YELLOW" -> {graphics2d.setColor(Color.YELLOW);
+                newshape.setoutlineColor("YELLOW");}
+        }
+
         if (shapeType == "TRIANGLE" ){
             newshape.setshapeName("TRIANGLE");
             if (x>x1 && y>y1){
