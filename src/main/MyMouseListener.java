@@ -49,7 +49,7 @@ public class MyMouseListener extends MouseAdapter{
             case "SELECT" -> {
                 System.out.println("Mouse Released Select: ("
                     + e.getX() + ", " + e.getY() + ")");
-                selectShape();
+                selectShape(e.getX(),e.getY());
             }
 
             case "MOVE" -> {
@@ -227,8 +227,31 @@ public class MyMouseListener extends MouseAdapter{
 
     }
 
-    public void selectShape(){
-        System.out.println("selecting shapes");
+    public void selectShape(int x, int y){
+        if (x1>x){
+            x2 = Math.abs(x-x1);
+            x1 = x;
+
+        }else if(x1<x) {
+            x2 = Math.abs(x - x1);
+
+        }
+        if (y1> y){
+            y2 = Math.abs(y-y1);
+            y1 = y;
+
+        } else if (y1<y) {
+            y2 = Math.abs(y - y1);
+
+        }
+        int[] rectA = new int[]{x,y,x1,y1 };
+        int[] rectB = shapeslist.shapeLocations();
+
+        if (!(rectA[0] < rectB[2] && rectA[2] > rectB[0] &&
+                rectA[1] < rectB[3] && rectA[3] > rectB[1])){
+            System.out.println("selected shape 0");
+        }
+
     }
 
     public void moveShape(){

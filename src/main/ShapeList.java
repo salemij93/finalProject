@@ -34,4 +34,17 @@ public class ShapeList {
     public int shapeListsize(){
         return shapes.size();
     }
+
+    public int[] shapeLocations(){
+
+            IShape shape = shapes.get(0);
+
+            int[] rectB = new int[4];
+            rectB[0] = shape.getX1();
+            rectB[1] = shape.getY1();
+            rectB[2] = shape.getX2();
+            rectB[3] = shape.getY2();
+
+        return rectB;
+    }
 }

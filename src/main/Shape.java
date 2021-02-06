@@ -18,9 +18,12 @@ public class Shape implements IShape{
     private String shadingType;
     private Graphics2D graphics2d;
     private IState currentState;
+    private final IState selectedState = new SelectedState();
+    private final IState notSelectedState = new NotSelectedState();
 
     Shape(Graphics2D graphics2D){
         this.graphics2d = graphics2D;
+        currentState = notSelectedState;
     }
 
     public String getShapeColor() {
@@ -225,7 +228,11 @@ public class Shape implements IShape{
         }
     }
 
-    public void updateSate(){
-
+    public void updateSate(boolean selected){
+        if (selected){
+            currentState = selectedState;
+        }else {
+            currentState = notSelectedState;
+        }
     }
 }
