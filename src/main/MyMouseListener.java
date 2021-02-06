@@ -245,14 +245,12 @@ public class MyMouseListener extends MouseAdapter{
 
         }
         int[] rectA = new int[]{x,y,x1,y1 };
-        int[] rectB = shapeslist.shapeLocations();
+        shapeslist.updateAll(rectA);
 
-        if (!(rectA[0] < rectB[2] && rectA[2] > rectB[0] &&
-                rectA[1] < rectB[3] && rectA[3] > rectB[1])){
-            System.out.println("selected shape 0");
+
         }
 
-    }
+
 
     public void moveShape(){
         MoveShapeCommand moveShape = new MoveShapeCommand();

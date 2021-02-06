@@ -35,16 +35,30 @@ public class ShapeList {
         return shapes.size();
     }
 
-    public int[] shapeLocations(){
+    public int[] shapeLocations(int i){
 
-            IShape shape = shapes.get(0);
+            IShape shape = shapes.get(i);
 
             int[] rectB = new int[4];
             rectB[0] = shape.getX1();
             rectB[1] = shape.getY1();
-            rectB[2] = shape.getX2();
-            rectB[3] = shape.getY2();
+            rectB[2] = shape.getX2() + shape.getX1();
+            rectB[3] = shape.getY2() + shape.getY1();
 
         return rectB;
     }
+
+
+    public void updateAll(int[] rectA){
+        for (int i = 0; i < shapes.size(); i++) {
+            int[] rectB = shapeLocations(i);
+
+            if (!(rectA[0] < rectB[2] && rectA[2] > rectB[0] &&
+                    rectA[1] < rectB[3] && rectA[3] > rectB[1])) {
+                System.out.println("selected shape " + i);
+            }
+
+        }
+    }
+
 }
