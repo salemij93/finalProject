@@ -65,7 +65,6 @@ public class MyMouseListener extends MouseAdapter{
         switch (appState.getActivePrimaryColor().toString()){
             case "BLACK" -> {graphics2d.setColor(Color.BLACK);
                 newshape.setShapeColor("BLACK");}
-
             case "RED" -> {graphics2d.setColor(Color.RED);
                 newshape.setShapeColor("RED");}
             case "BLUE" -> {graphics2d.setColor(Color.BLUE);
