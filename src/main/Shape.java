@@ -235,4 +235,8 @@ public class Shape implements IShape{
             currentState = notSelectedState;
         }
     }
+
+    public boolean getState(){
+        return currentState.selected();
+    }
 }

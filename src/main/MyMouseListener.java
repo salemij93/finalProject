@@ -255,7 +255,8 @@ public class MyMouseListener extends MouseAdapter{
     public void moveShape(int x, int y){
         int deltaX = x-x1;
         int deltaY = y-y1;
-        MoveShapeCommand moveShape = new MoveShapeCommand();
+
+        MoveShapeCommand moveShape = new MoveShapeCommand(shapeslist, deltaX,deltaY);
         moveShape.runCommand();
     }
 
