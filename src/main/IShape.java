@@ -17,4 +17,6 @@ public interface IShape {
     void undraw();
     void updateSate(boolean selected);
     boolean getState();
+    String getshapeName();
+
 }

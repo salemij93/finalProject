@@ -16,7 +16,7 @@ public class Shape implements IShape{
     private String shapeColor;
     private String outlineColor;
     private String shadingType;
-    private Graphics2D graphics2d;
+        private Graphics2D graphics2d;
     private IState currentState;
     private final IState selectedState = new SelectedState();
     private final IState notSelectedState = new NotSelectedState();
@@ -25,6 +25,7 @@ public class Shape implements IShape{
         this.graphics2d = graphics2D;
         currentState = notSelectedState;
     }
+
 
     public String getShapeColor() {
         return shapeColor;

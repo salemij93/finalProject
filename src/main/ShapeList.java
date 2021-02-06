@@ -74,9 +74,16 @@ public class ShapeList {
         for (int i = 0; i < shapes.size(); i++) {
             IShape shape = shapes.get(i);
             if (shape.getState()) {
-
-                shape.setX1(shape.getX1() + deltaX);
-                shape.setY1(shape.getY1() + deltaY);
+                switch (shape.getshapeName()) {
+                    case "RECTANGLE" -> {
+                        shape.setX1(shape.getX1() + deltaX);
+                        shape.setY1(shape.getY1() + deltaY);
+                    }
+                    case "ELLIPSE" -> {
+                        shape.setX1(shape.getX1() + deltaX);
+                        shape.setY1(shape.getY1() + deltaY);
+                    }
+                }
             }
         }
     }
