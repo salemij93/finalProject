@@ -46,10 +46,18 @@ public class MyMouseListener extends MouseAdapter{
                 drawShape(appState.getActiveShapeType().toString(),
                         e.getX(),e.getY());
             }
-            case "SELECT" -> System.out.println("Mouse Released Select: ("
+            case "SELECT" -> {
+                System.out.println("Mouse Released Select: ("
                     + e.getX() + ", " + e.getY() + ")");
-            case "MOVE" -> System.out.println("Mouse Released Move: ("
-                    + e.getX() + ", " + e.getY() + ")");
+
+            }
+
+            case "MOVE" -> {
+                System.out.println("Mouse Released Move: ("
+                        + e.getX() + ", " + e.getY() + ")");
+                moveShape();
+
+            }
         }
 
 
@@ -219,6 +227,10 @@ public class MyMouseListener extends MouseAdapter{
 
     }
 
+    public void moveShape(){
+        MoveShapeCommand moveShape = new MoveShapeCommand();
+        moveShape.runCommand();
+    }
 
 
 }
