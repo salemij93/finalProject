@@ -17,6 +17,7 @@ public class Shape implements IShape{
     private String outlineColor;
     private String shadingType;
     private Graphics2D graphics2d;
+    private IState currentState;
 
     Shape(Graphics2D graphics2D){
         this.graphics2d = graphics2D;
@@ -222,5 +223,9 @@ public class Shape implements IShape{
             }
 
         }
+    }
+
+    public void updateSate(){
+
     }
 }

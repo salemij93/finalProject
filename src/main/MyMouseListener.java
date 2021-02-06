@@ -49,7 +49,7 @@ public class MyMouseListener extends MouseAdapter{
             case "SELECT" -> {
                 System.out.println("Mouse Released Select: ("
                     + e.getX() + ", " + e.getY() + ")");
-
+                selectShape();
             }
 
             case "MOVE" -> {
@@ -225,6 +225,10 @@ public class MyMouseListener extends MouseAdapter{
 
 
 
+    }
+
+    public void selectShape(){
+        System.out.println("selecting shapes");
     }
 
     public void moveShape(){
