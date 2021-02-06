@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ShapeList {
 
-    ArrayList<IShape> shapes = new ArrayList<IShape>();
+    ArrayList<IShape> shapes = new ArrayList<>();
 
     public void addShape(Shape newshapes) {
         shapes.add(newshapes);
