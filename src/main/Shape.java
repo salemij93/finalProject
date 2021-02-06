@@ -87,14 +87,9 @@ public class Shape implements IShape{
 
         switch (getShapeColor()){
             case "BLACK" -> graphics2d.setColor(Color.BLACK);
-
-
             case "RED" -> graphics2d.setColor(Color.RED);
-
             case "BLUE" -> graphics2d.setColor(Color.BLUE);
-
             case "CYAN" -> graphics2d.setColor(Color.CYAN);
-
             case "DARK_GRAY" -> graphics2d.setColor(Color.DARK_GRAY);
             case "GRAY" -> graphics2d.setColor(Color.GRAY);
             case "GREEN" -> graphics2d.setColor(Color.GREEN);
