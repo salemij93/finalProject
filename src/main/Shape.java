@@ -14,6 +14,7 @@ public class Shape implements IShape{
     private int y3;
     private String shapeName;
     private String shapeColor;
+    private String shadingType;
     private Graphics2D graphics2d;
 
     Shape(Graphics2D graphics2D){
@@ -34,6 +35,9 @@ public class Shape implements IShape{
     public String getshapeName(){
         return shapeName;
     }
+
+    public void setshadingType(String  shadingType){this.shadingType = shadingType;}
+    public String getshadingType(){return shadingType;}
 
     public void setX1(int x1) {
         this.x1 = x1;
