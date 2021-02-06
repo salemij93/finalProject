@@ -75,13 +75,12 @@ public class ShapeList {
             IShape shape = shapes.get(i);
             if (shape.getState()) {
                 switch (shape.getshapeName()) {
-                    case "RECTANGLE" -> {
+                    case "RECTANGLE", "ELLIPSE" -> {
                         shape.setX1(shape.getX1() + deltaX);
                         shape.setY1(shape.getY1() + deltaY);
                     }
-                    case "ELLIPSE" -> {
-                        shape.setX1(shape.getX1() + deltaX);
-                        shape.setY1(shape.getY1() + deltaY);
+                    case "TRIANGLE" -> {
+
                     }
                 }
             }
