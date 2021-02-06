@@ -32,7 +32,7 @@ public class Shape implements IShape{
 
     public String getoutlineColor() {  return outlineColor;   }
 
-    public void setoutlineColor(String shapeColor) {
+    public void setoutlineColor(String outlineColor) {
         this.outlineColor = outlineColor;
     }
 
@@ -138,6 +138,7 @@ public class Shape implements IShape{
                 switch (getshapeName()) {
                     case "RECTANGLE" -> {
                         graphics2d.fillRect(x1,y1,x2,y2);
+                        System.out.println(getoutlineColor());
                         switch (getoutlineColor()){
                             case "BLACK" -> graphics2d.setColor(Color.BLACK);
                             case "RED" -> graphics2d.setColor(Color.RED);
