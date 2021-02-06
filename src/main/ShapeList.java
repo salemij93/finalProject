@@ -80,6 +80,12 @@ public class ShapeList {
                         shape.setY1(shape.getY1() + deltaY);
                     }
                     case "TRIANGLE" -> {
+                        shape.setX1(shape.getX1() + deltaX);
+                        shape.setY1(shape.getY1() + deltaY);
+                        shape.setY2(shape.getY2() + deltaY);
+                        shape.setY3(shape.getY3() + deltaY);
+                        shape.setX2(shape.getX2() + deltaX);
+                        shape.setX3(shape.getX3() + deltaX);
 
                     }
                 }
