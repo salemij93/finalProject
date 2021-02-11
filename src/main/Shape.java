@@ -203,6 +203,10 @@ public class Shape implements IShape{
             }
         }
 
+        if(this.getState()){
+            System.out.println("this is selected");
+        }
+
 
 
     }
