@@ -205,6 +205,10 @@ public class Shape implements IShape{
 
         if(this.getState()){
             System.out.println("this is selected");
+            graphics2d.setColor(Color.BLACK);
+            Stroke stroke = new BasicStroke(3, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 1, new float[]{9}, 0);
+            graphics2d.setStroke(stroke);
+            graphics2d.drawRect(x1-3, y1-3, x2+6, y2+6);
         }
 
 
