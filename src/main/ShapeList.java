@@ -137,6 +137,19 @@ public class ShapeList {
 
             }
         }
+        return deleted;
+    }
+
+    public IShape getShape(int i){
+        IShape shape = shapes.get(i);
+        return shape;
+    }
+
+    public void addNewShape(ShapeList shapeList){
+        for (int i = 0; i < shapeList.shapeListsize(); i++) {
+            IShape shape = shapeList.getShape(i);
+            shapes.add(shape);
+        }
     }
 
 }
