@@ -36,7 +36,7 @@ public class MyMouseListener extends MouseAdapter{
                 +e.getX()+", "+e.getY() +")");
         x1 = e.getX();
         y1 = e.getY();
-
+        DeleteHistory delete = new DeleteHistory(shapeslist);
 
 
 

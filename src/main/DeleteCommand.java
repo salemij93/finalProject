@@ -3,12 +3,9 @@ package main;
 public class DeleteCommand implements ICommand, IUndoRedo{
 
 
-
-
     @Override
     public void runCommand() {
-
-        System.out.println("delete");
+        DeleteHistory.delete();
         CommandHistory.add(this);
     }
 
