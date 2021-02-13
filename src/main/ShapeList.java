@@ -1,6 +1,9 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
 
 public class ShapeList {
 
@@ -49,10 +52,25 @@ public class ShapeList {
             }
 
             case "TRIANGLE" ->{
-                rectB[0] = shape.getX1();
-                rectB[1] = shape.getY1();
-                rectB[2] = shape.getX1()-shape.getX2();
-                rectB[3] = shape.getY1()-shape.getY2();
+                int x1 = shape.getX1();
+                int y1 = shape.getY1();
+                int x2 = shape.getX2();
+                int y2 = shape.getY2();
+                int x3 = shape.getX3();
+                int y3 = shape.getY3();
+
+                Integer[] xValues = {x1,x2,x3};
+                Integer[] yValues = {y1,y2,y3};
+                int minX = Collections.min(Arrays.asList(xValues));
+                int minY = Collections.min(Arrays.asList(yValues));
+                int maxX = Collections.max(Arrays.asList(xValues));
+                int maxY = Collections.max(Arrays.asList(yValues));
+                rectB[0] = minX;
+                rectB[1] = minY;
+                rectB[2] = maxX-minX;
+                rectB[3] = maxY-minY;
+
+
             }
         }
 
