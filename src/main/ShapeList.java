@@ -12,8 +12,8 @@ public class ShapeList {
         shapes.add(newshapes);
     }
 
-    public void removeShape() {
-        shapes.remove(shapes.size() - 1);
+    public void removeShape(IShape shape) {
+        shapes.remove(shape);
     }
 
     public void drawAll() {
