@@ -11,11 +11,11 @@ public class PasteShapeCommand implements ICommand, IUndoRedo{
     @Override
     public void runCommand() {
         System.out.println("pasted");
-
+        shapeList.undrawAll();
         copied.moveSelected(100,100);
         shapeList.addNewShape(copied);
         System.out.println(shapeList.shapeListsize());
-        shapeList.undrawAll();
+
         shapeList.drawAll();
         CommandHistory.add(this);
     }
