@@ -2,8 +2,6 @@ package main;
 
 public class DeleteCommand implements ICommand, IUndoRedo{
 
-    private ShapeList shapeList;
-
 
 
     @Override

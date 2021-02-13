@@ -263,9 +263,7 @@ public class MyMouseListener extends MouseAdapter{
         moveShape.runCommand();
     }
 
-    public void deleteShape(){
-        DeleteCommand delete = new DeleteCommand();
-    }
+
 
 
 }
