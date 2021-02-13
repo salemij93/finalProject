@@ -2,7 +2,10 @@ package main;
 
 public class CopiedShapes {
 
-    public CopiedShapes(ShapeList copied){
+    public static ShapeList copied;
 
+    public CopiedShapes(ShapeList copied){
+        this.copied = copied;
     }
+
 }

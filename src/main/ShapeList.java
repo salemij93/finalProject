@@ -145,11 +145,7 @@ public class ShapeList {
         for (int i = 0; i < shapes.size(); i++){
             IShape shape = shapes.get(i);
             if (shape.getState()){
-
-
                 copied.addShape(shape);
-
-
             }
         }
         return copied;
@@ -164,6 +160,12 @@ public class ShapeList {
         for (int i = 0; i < shapeList.shapeListsize(); i++) {
             IShape shape = shapeList.getShape(i);
             shapes.add(shape);
+        }
+    }
+
+    public void removeCopied(ShapeList shapeList){
+        for (int i = 0; i < shapeList.shapeListsize(); i++) {
+            shapes.remove(shapeList.getShape(i));
         }
     }
 
