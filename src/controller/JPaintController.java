@@ -2,6 +2,7 @@ package controller;
 
 import main.RedoCommand;
 import main.UndoCommand;
+import main.DeleteCommand;
 import model.interfaces.IApplicationState;
 import view.EventName;
 import view.interfaces.IUiModule;
@@ -28,5 +29,6 @@ public class JPaintController implements IJPaintController {
         uiModule.addEvent(EventName.CHOOSE_MOUSE_MODE, () -> applicationState.setActiveStartAndEndPointMode());
         uiModule.addEvent(EventName.UNDO, () -> new UndoCommand().runCommand());
         uiModule.addEvent(EventName.REDO, () -> new RedoCommand().runCommand());
+        uiModule.addEvent(EventName.DELETE, () -> new DeleteCommand().runCommand());
     }
 }
