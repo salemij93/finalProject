@@ -5,7 +5,6 @@ public class DeleteCommand implements ICommand, IUndoRedo{
 
     @Override
     public void runCommand() {
-        DeleteHistory.delete();
         CommandHistory.add(this);
     }
 
