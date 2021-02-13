@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 import model.persistence.ApplicationState;
+
 import view.interfaces.PaintCanvasBase;
 
 
@@ -17,6 +18,7 @@ public class MyMouseListener extends MouseAdapter{
         this.paintCanvas = PaintCanvas;
         this.appState = AppState;
         this.graphics2d = PaintCanvas.getGraphics2D();
+
 
 
     }
@@ -34,6 +36,7 @@ public class MyMouseListener extends MouseAdapter{
                 +e.getX()+", "+e.getY() +")");
         x1 = e.getX();
         y1 = e.getY();
+
 
 
 
@@ -258,6 +261,10 @@ public class MyMouseListener extends MouseAdapter{
 
         MoveShapeCommand moveShape = new MoveShapeCommand(shapeslist, deltaX,deltaY);
         moveShape.runCommand();
+    }
+
+    public void deleteShape(){
+        DeleteCommand delete = new DeleteCommand();
     }
 
 
