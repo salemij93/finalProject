@@ -9,7 +9,7 @@ import view.interfaces.IUiModule;
 public class JPaintController implements IJPaintController {
     private final IUiModule uiModule;
     private final IApplicationState applicationState;
-    private ShapeList shapeList;
+    private final ShapeList shapeList;
 
     public JPaintController(IUiModule uiModule, IApplicationState applicationState, ShapeList shapeList) {
         this.uiModule = uiModule;

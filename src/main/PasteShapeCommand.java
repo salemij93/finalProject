@@ -14,6 +14,7 @@ public class PasteShapeCommand implements ICommand, IUndoRedo{
 
         copied.moveSelected(100,100);
         shapeList.addNewShape(copied);
+        System.out.println(shapeList.shapeListsize());
         shapeList.undrawAll();
         shapeList.drawAll();
         CommandHistory.add(this);

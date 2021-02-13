@@ -6,6 +6,12 @@ import java.util.Collections;
 
 public class ShapeList {
 
+    private static ShapeList instance = new ShapeList();
+    private ShapeList(){};
+    public static ShapeList getInstance(){
+        return instance;
+    }
+
     ArrayList<IShape> shapes = new ArrayList<>();
 
     public void addShape(IShape newshapes) {
@@ -27,8 +33,8 @@ public class ShapeList {
     }
 
     public void undrawAll() {
-        for (int i = 0; i < shapes.size(); i++) {
-            IShape shape = shapes.get(i);
+        for (int i = 0; i < this.shapeListsize(); i++) {
+            IShape shape = this.getShape(i);
             shape.undraw();
         }
     }
@@ -97,6 +103,7 @@ public class ShapeList {
                 shape.updateSate(false);
             }
             shape.selectedShape();
+            System.out.println(shapes.size());
 
 
         }
@@ -142,9 +149,10 @@ public class ShapeList {
 
     public ShapeList copySelected(){
         ShapeList copied = new ShapeList();
-        for (int i = 0; i < shapes.size(); i++){
-            IShape shape = shapes.get(i);
+        for (int i = 0; i < this.shapeListsize(); i++){
+            IShape shape = this.getShape(i);
             if (shape.getState()){
+                shape.updateSate(true);
                 copied.addShape(shape);
             }
         }
@@ -159,13 +167,13 @@ public class ShapeList {
     public void addNewShape(ShapeList shapeList){
         for (int i = 0; i < shapeList.shapeListsize(); i++) {
             IShape shape = shapeList.getShape(i);
-            shapes.add(shape);
+            this.addShape(shape);
         }
     }
 
     public void removeCopied(ShapeList shapeList){
         for (int i = 0; i < shapeList.shapeListsize(); i++) {
-            shapes.remove(shapeList.getShape(i));
+            this.removeShape(shapeList.getShape(i));
         }
     }
 
