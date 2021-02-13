@@ -202,7 +202,7 @@ public class Shape implements IShape{
                 }
             }
         }
-
+        this.selectedShape();
 
 
 
