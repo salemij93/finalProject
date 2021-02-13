@@ -8,7 +8,7 @@ public class ShapeList {
 
     ArrayList<IShape> shapes = new ArrayList<>();
 
-    public void addShape(Shape newshapes) {
+    public void addShape(IShape newshapes) {
         shapes.add(newshapes);
     }
 
@@ -121,6 +121,20 @@ public class ShapeList {
 
                     }
                 }
+            }
+        }
+    }
+
+    public ShapeList removeSelected(){
+        ShapeList deleted = new ShapeList();
+        for (int i = 0; i < shapes.size(); i++){
+            IShape shape = shapes.get(i);
+            if (shape.getState()){
+                shape.undraw();
+                shapes.remove(i);
+                deleted.addShape(shape);
+
+
             }
         }
     }

@@ -12,24 +12,28 @@ public class MyMouseListener extends MouseAdapter{
     private PaintCanvasBase paintCanvas;
     private ApplicationState appState;
     private Graphics2D graphics2d;
+    private ShapeList shapeList;
 
-    MyMouseListener(PaintCanvasBase PaintCanvas,ApplicationState AppState){
+    MyMouseListener(PaintCanvasBase PaintCanvas,ApplicationState AppState, ShapeList shapeList){
 
         this.paintCanvas = PaintCanvas;
         this.appState = AppState;
         this.graphics2d = PaintCanvas.getGraphics2D();
+        this.shapeList = shapeList;
 
 
 
     }
 
-    ShapeList shapeslist = new ShapeList();
+
     private int x1;
     private int x2;
     private int x3;
     private int y1;
     private int y2;
     private int y3;
+
+
 
     public void mousePressed(MouseEvent e) {
         System.out.println("Mouse Pressed: ("
@@ -222,7 +226,7 @@ public class MyMouseListener extends MouseAdapter{
 
         }
 
-        CreateShapeCommand createShape = new CreateShapeCommand(shapeslist,newshape);
+        CreateShapeCommand createShape = new CreateShapeCommand(shapeList,newshape);
         createShape.runCommand();
 
 
@@ -247,7 +251,7 @@ public class MyMouseListener extends MouseAdapter{
 
         }
         int[] rectA = new int[]{x1,y1,x2,y2 };
-        shapeslist.updateAll(rectA);
+        shapeList.updateAll(rectA);
 
 
         }
@@ -258,8 +262,13 @@ public class MyMouseListener extends MouseAdapter{
         int deltaX = x-x1;
         int deltaY = y-y1;
 
-        MoveShapeCommand moveShape = new MoveShapeCommand(shapeslist, deltaX,deltaY);
+        MoveShapeCommand moveShape = new MoveShapeCommand(shapeList, deltaX,deltaY);
         moveShape.runCommand();
+    }
+
+    public void deleteShapes(){
+        DeleteCommand deleteShape = new DeleteCommand(shapeList);
+        deleteShape.runCommand();
     }
 
 
