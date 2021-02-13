@@ -51,8 +51,8 @@ public class ShapeList {
             case "TRIANGLE" ->{
                 rectB[0] = shape.getX1();
                 rectB[1] = shape.getY1();
-                rectB[2] = shape.getX2()+shape.getX1();
-                rectB[3] = shape.getY2()+shape.getY2();
+                rectB[2] = shape.getX1()-shape.getX2();
+                rectB[3] = shape.getY1()-shape.getY2();
             }
         }
 
