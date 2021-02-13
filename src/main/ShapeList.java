@@ -38,12 +38,25 @@ public class ShapeList {
     public int[] shapeLocations(int i) {
 
         IShape shape = shapes.get(i);
-
         int[] rectB = new int[4];
-        rectB[0] = shape.getX1();
-        rectB[1] = shape.getY1();
-        rectB[2] = shape.getX2();
-        rectB[3] = shape.getY2();
+        switch (shape.getshapeName()){
+            case "RECTANGLE", "ELLIPSE" ->{
+
+                rectB[0] = shape.getX1();
+                rectB[1] = shape.getY1();
+                rectB[2] = shape.getX2();
+                rectB[3] = shape.getY2();
+            }
+
+            case "TRIANGLE" ->{
+                rectB[0] = shape.getX1();
+                rectB[1] = shape.getY1();
+                rectB[2] = shape.getX2()+shape.getX1();
+                rectB[3] = shape.getY2()+shape.getY2();
+            }
+        }
+
+
 
         return rectB;
     }
