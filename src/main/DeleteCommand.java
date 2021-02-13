@@ -7,7 +7,6 @@ public class DeleteCommand implements ICommand, IUndoRedo{
 
     public DeleteCommand(ShapeList shapeList){
         this.shapeList = shapeList;
-
     }
     @Override
     public void runCommand() {
