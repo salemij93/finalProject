@@ -251,11 +251,11 @@ public class Shape implements IShape{
             graphics2d.setStroke(stroke);
             switch (getshapeName()){
                 case "RECTANGLE" -> {
-                    graphics2d.drawRect(x1-3, y1-3, x2+6, y2+6);
+                    graphics2d.drawRect(x1, y1, x2, y2);
                 }
 
                 case "ELLIPSE" -> {
-                    graphics2d.drawOval(x1-3, y1-3, x2+6, y2+6);
+                    graphics2d.drawOval(x1, y1, x2, y2);
                 }
 
                 case "TRIANGLE" -> {
@@ -271,11 +271,11 @@ public class Shape implements IShape{
             graphics2d.setStroke(new BasicStroke(2));
             switch (getshapeName()){
                 case "RECTANGLE" -> {
-                    graphics2d.drawRect(x1-3, y1-3, x2+6, y2+6);
+                    graphics2d.drawRect(x1, y1, x2, y2);
                 }
 
                 case "ELLIPSE" -> {
-                    graphics2d.drawOval(x1-3, y1-3, x2+6, y2+6);
+                    graphics2d.drawOval(x1, y1, x2, y2);
                 }
 
                 case "TRIANGLE" -> {
