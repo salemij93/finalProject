@@ -203,13 +203,7 @@ public class Shape implements IShape{
             }
         }
 
-        if(this.getState()){
-            System.out.println("this is selected");
-            graphics2d.setColor(Color.BLACK);
-            Stroke stroke = new BasicStroke(3, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 1, new float[]{9}, 0);
-            graphics2d.setStroke(stroke);
-            graphics2d.drawRect(x1-3, y1-3, x2+6, y2+6);
-        }
+
 
 
 
@@ -247,5 +241,48 @@ public class Shape implements IShape{
 
     public boolean getState(){
         return currentState.selected();
+    }
+
+    public void selectedShape(){
+        if(this.getState()){
+            System.out.println("this is selected");
+            graphics2d.setColor(Color.BLACK);
+            Stroke stroke = new BasicStroke(3, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 1, new float[]{9}, 0);
+            graphics2d.setStroke(stroke);
+            switch (getshapeName()){
+                case "RECTANGLE" -> {
+                    graphics2d.drawRect(x1-3, y1-3, x2+6, y2+6);
+                }
+
+                case "ELLIPSE" -> {
+                    graphics2d.drawOval(x1-3, y1-3, x2+6, y2+6);
+                }
+
+                case "TRIANGLE" -> {
+
+                    graphics2d.drawPolygon(new int[]{x1, x2, x3}, new int[]{y1, y2, y3}, 3);
+                }
+            }
+
+
+
+        }else if(!this.getState()){
+            graphics2d.setColor(Color.WHITE);
+            graphics2d.setStroke(new BasicStroke(3));
+            switch (getshapeName()){
+                case "RECTANGLE" -> {
+                    graphics2d.drawRect(x1-3, y1-3, x2+6, y2+6);
+                }
+
+                case "ELLIPSE" -> {
+                    graphics2d.drawOval(x1-3, y1-3, x2+6, y2+6);
+                }
+
+                case "TRIANGLE" -> {
+
+                    graphics2d.drawPolygon(new int[]{x1, x2, x3}, new int[]{y1, y2, y3}, 3);
+                }
+            }
+        }
     }
 }

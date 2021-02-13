@@ -18,5 +18,6 @@ public interface IShape {
     void updateSate(boolean selected);
     boolean getState();
     String getshapeName();
+    void selectedShape();
 
 }

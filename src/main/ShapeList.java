@@ -62,11 +62,11 @@ public class ShapeList {
                 System.out.println("select shape " + i);
 
                 shape.updateSate(true);
-                shape.undraw();
-                shape.draw();
+
             } else {
                 shape.updateSate(false);
             }
+            shape.selectedShape();
 
 
         }
