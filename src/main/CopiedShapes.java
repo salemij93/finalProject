@@ -1,11 +1,14 @@
 package main;
 
+import java.util.ArrayList;
+
 public class CopiedShapes {
 
-    public static ShapeList copied;
+    ShapeList shapelist =  ShapeList.getInstance();
+    ArrayList<IShape> copied = new ArrayList<>();
 
-    public CopiedShapes(ShapeList copied){
-        this.copied = copied;
+    public CopiedShapes(){
+        this.copied = shapelist.copySelected();
     }
 
 }

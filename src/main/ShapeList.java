@@ -14,6 +14,7 @@ public class ShapeList {
 
     ArrayList<IShape> shapes = new ArrayList<>();
 
+
     public void addShape(IShape newshapes) {
         shapes.add(newshapes);
     }
@@ -135,14 +136,14 @@ public class ShapeList {
 
 
 
-    public ShapeList removeSelected(){
-        ShapeList deleted = new ShapeList();
+    public ArrayList<IShape> removeSelected(){
+        ArrayList<IShape> deleted = new ArrayList<>();
         for (int i = 0; i < this.shapeListsize(); i++){
             IShape shape = this.getShape(i);
             if (shape.getState()){
                 shape.undraw();
                 this.removeShape(shape);
-                deleted.addShape(shape);
+                deleted.add(shape);
 
 
             }
@@ -150,13 +151,13 @@ public class ShapeList {
         return deleted;
     }
 
-    public ShapeList copySelected(){
-        ShapeList copied = new ShapeList();
+    public ArrayList<IShape> copySelected(){
+        ArrayList<IShape> copied = new ArrayList<>();
         for (int i = 0; i < this.shapeListsize(); i++){
             IShape shape = this.getShape(i);
             if (shape.getState()){
                 shape.updateSate(true);
-                copied.addShape(shape);
+                copied.add(shape);
             }
         }
         return copied;
@@ -167,16 +168,16 @@ public class ShapeList {
         return shape;
     }
 
-    public void addNewShape(ShapeList shapeList){
-        for (int i = 0; i < shapeList.shapeListsize(); i++) {
-            IShape shape = shapeList.getShape(i);
+    public void addNewShape(ArrayList<IShape> shapeList){
+        for (int i = 0; i < shapeList.size(); i++) {
+            IShape shape = shapeList.get(i);
             this.addShape(shape);
         }
     }
 
-    public void removeCopied(ShapeList shapeList){
-        for (int i = 0; i < shapeList.shapeListsize(); i++) {
-            this.removeShape(shapeList.getShape(i));
+    public void removeCopied(ArrayList<IShape> shapeList){
+        for (int i = 0; i < shapeList.size(); i++) {
+            this.removeShape(shapeList.get(i));
         }
     }
 

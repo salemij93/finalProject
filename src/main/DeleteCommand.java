@@ -1,9 +1,11 @@
 package main;
 
+import java.util.ArrayList;
+
 public class DeleteCommand implements ICommand, IUndoRedo{
 
     ShapeList shapelist =  ShapeList.getInstance();
-    private ShapeList deleted;
+    private ArrayList<IShape> deleted = new ArrayList<>();
 
 
     @Override

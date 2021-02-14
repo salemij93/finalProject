@@ -1,24 +1,26 @@
 package main;
 
+import java.util.ArrayList;
+
 public class PasteShapeCommand implements ICommand, IUndoRedo{
 
     ShapeList shapelist =  ShapeList.getInstance();
-    private ShapeList copied;
+    ArrayList<IShape> copied = new ArrayList<>();
 
     public void setCopied(){
-        copied = shapelist.copySelected();
+        ArrayList<IShape> copied = shapelist.copySelected();
     }
-    public ShapeList getCopied(){
+    public ArrayList<IShape> getCopied(){
         return copied;
     }
 
     @Override
     public void runCommand() {
         System.out.println("pasted");
-        ShapeList currentcopied = getCopied();
+        ArrayList<IShape> currentCopied = getCopied();
         shapelist.undrawAll();
-        currentcopied.moveSelected(100,100);
-        shapelist.addNewShape(currentcopied);
+//        currentCopied.moveSelected(100,100);
+        shapelist.addNewShape(currentCopied);
         System.out.println(shapelist.shapeListsize());
 
         shapelist.drawAll();
@@ -27,20 +29,20 @@ public class PasteShapeCommand implements ICommand, IUndoRedo{
 
     @Override
     public void undoCommand() {
-        ShapeList currentcopied = getCopied();
+        ArrayList<IShape> currentCopied = getCopied();
         System.out.println("undo pasted");
-        currentcopied.undrawAll();
-        shapelist.removeCopied(currentcopied);
+//        currentCopied.undrawAll();
+        shapelist.removeCopied(currentCopied);
 
 
     }
 
     @Override
     public void redoCommand() {
-        ShapeList currentcopied = getCopied();
+        ArrayList<IShape> currentCopied = getCopied();
         System.out.println("redo pasted");
-        currentcopied.drawAll();
-        shapelist.addNewShape(currentcopied);
+//        currentCopied.drawAll();
+        shapelist.addNewShape(currentCopied);
 
     }
 }

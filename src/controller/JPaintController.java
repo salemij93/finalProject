@@ -9,7 +9,7 @@ import view.interfaces.IUiModule;
 public class JPaintController implements IJPaintController {
     private final IUiModule uiModule;
     private final IApplicationState applicationState;
-    ShapeList shapelist =  ShapeList.getInstance();
+
 
     public JPaintController(IUiModule uiModule, IApplicationState applicationState) {
         this.uiModule = uiModule;
@@ -31,7 +31,7 @@ public class JPaintController implements IJPaintController {
         uiModule.addEvent(EventName.UNDO, () -> new UndoCommand().runCommand());
         uiModule.addEvent(EventName.REDO, () -> new RedoCommand().runCommand());
         uiModule.addEvent(EventName.DELETE, () -> new DeleteCommand().runCommand());
-        uiModule.addEvent(EventName.COPY, () -> new PasteShapeCommand().setCopied());
-        uiModule.addEvent(EventName.PASTE, () -> new PasteShapeCommand().runCommand());
+        //uiModule.addEvent(EventName.COPY, () -> new PasteShapeCommand().setCopied());
+        //uiModule.addEvent(EventName.PASTE, () -> new PasteShapeCommand().runCommand());
     }
 }
