@@ -18,11 +18,10 @@ public class PasteShapeCommand implements ICommand, IUndoRedo{
     public void runCommand() {
         System.out.println("pasted");
         ArrayList<IShape> currentCopied = getCopied();
-        shapelist.undrawAll();
-//        currentCopied.moveSelected(100,100);
+
         shapelist.addNewShape(currentCopied);
         System.out.println(shapelist.shapeListsize());
-
+        shapelist.undrawAll();
         shapelist.drawAll();
         CommandHistory.add(this);
     }
@@ -31,9 +30,9 @@ public class PasteShapeCommand implements ICommand, IUndoRedo{
     public void undoCommand() {
         ArrayList<IShape> currentCopied = getCopied();
         System.out.println("undo pasted");
-//        currentCopied.undrawAll();
         shapelist.removeCopied(currentCopied);
-
+        shapelist.undrawAll();
+        shapelist.drawAll();
 
     }
 

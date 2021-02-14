@@ -171,6 +171,21 @@ public class ShapeList {
     public void addNewShape(ArrayList<IShape> shapeList){
         for (int i = 0; i < shapeList.size(); i++) {
             IShape shape = shapeList.get(i);
+            switch (shape.getshapeName()) {
+                case "RECTANGLE", "ELLIPSE" -> {
+                    shape.setX1(shape.getX1() + 100);
+                    shape.setY1(shape.getY1() + 100);
+                }
+                case "TRIANGLE" -> {
+                    shape.setX1(shape.getX1() + 100);
+                    shape.setY1(shape.getY1() + 100);
+                    shape.setY2(shape.getY2() + 100);
+                    shape.setY3(shape.getY3() + 100);
+                    shape.setX2(shape.getX2() + 100);
+                    shape.setX3(shape.getX3() + 100);
+
+                }
+            }
             this.addShape(shape);
         }
     }
