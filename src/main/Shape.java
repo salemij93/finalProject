@@ -243,6 +243,10 @@ public class Shape implements IShape{
         return currentState.selected();
     }
 
+    public int wasMoved(){
+
+    }
+
     public void selectedShape(){
         if(this.getState()){
             System.out.println("this is selected");
