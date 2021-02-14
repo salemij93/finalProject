@@ -137,11 +137,11 @@ public class ShapeList {
 
     public ShapeList removeSelected(){
         ShapeList deleted = new ShapeList();
-        for (int i = 0; i < shapes.size(); i++){
-            IShape shape = shapes.get(i);
+        for (int i = 0; i < this.shapeListsize(); i++){
+            IShape shape = this.getShape(i);
             if (shape.getState()){
                 shape.undraw();
-                shapes.remove(i);
+                this.removeShape(shape);
                 deleted.addShape(shape);
 
 
