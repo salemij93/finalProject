@@ -6,7 +6,7 @@ import java.util.Collections;
 
 public class ShapeList {
 
-    private static ShapeList instance = new ShapeList();
+    private static final ShapeList instance = new ShapeList();
     private ShapeList(){};
     public static ShapeList getInstance(){
         return instance;
