@@ -30,6 +30,29 @@ public class Shape implements IShape{
         wasMoved = notSelectedState;
     }
 
+    public Shape(IShape shape){
+        this.x1 = shape.getX1();
+        this.x2 = shape.getX2();
+        this.x3 = shape.getX3();
+        this.y1 = shape.getY1();
+        this.y2 = shape.getY2();
+        this.y3 = shape.getY3();
+        this.shapeName = shape.getshapeName();
+        this.shapeColor = shape.getShapeColor();
+        this.outlineColor = shape.getoutlineColor();
+        this.shadingType = shape.getshadingType();
+        this.graphics2d = shape.getGraphics2d();
+        this.currentState = selectedState;
+        this.wasMoved = notSelectedState;
+    }
+    public static Shape newInstance(IShape shape){
+        return new Shape(shape);
+    }
+
+    @Override
+    public Graphics2D getGraphics2d() {
+        return this.graphics2d;
+    }
 
     public String getShapeColor() {
         return shapeColor;

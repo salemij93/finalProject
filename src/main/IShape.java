@@ -1,5 +1,6 @@
 package main;
 
+import java.awt.*;
 import java.util.ArrayList;
 
 public interface IShape {
@@ -25,4 +26,10 @@ public interface IShape {
     void updateMoved(boolean moved);
 
 
+    String getShapeColor();
+
+    String getoutlineColor();
+
+    String getshadingType();
+    Graphics2D getGraphics2d();
 }

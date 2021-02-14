@@ -39,6 +39,10 @@ public class ShapeList {
             IShape shape = this.getShape(i);
             shape.undraw();
         }
+        for (int i = 0; i < copied.size(); i++) {
+            IShape shape = copied.get(i);
+            shape.undraw();
+        }
     }
 
     public int shapeListsize() {
@@ -156,9 +160,12 @@ public class ShapeList {
 
         for (int i = 0; i < this.shapeListsize(); i++){
             IShape shape = this.getShape(i);
+            Shape clone = new Shape(shape);
+            clone = Shape.newInstance(shape);
             if (shape.getState()){
                 shape.updateSate(true);
-                copied.add(shape);
+
+                copied.add(clone);
             }
         }
 
