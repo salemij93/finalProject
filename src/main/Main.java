@@ -17,14 +17,14 @@ public class Main {
         PaintCanvasBase paintCanvas = new PaintCanvas();
         IGuiWindow guiWindow = new GuiWindow(paintCanvas);
         IUiModule uiModule = new Gui(guiWindow);
-        ShapeList shapeslist =  ShapeList.getInstance();
+        ShapeList shapelist =  ShapeList.getInstance();
         ApplicationState appState = new ApplicationState(uiModule);
-        IJPaintController controller = new JPaintController(uiModule, appState, shapeslist);
+        IJPaintController controller = new JPaintController(uiModule, appState);
         controller.setup();
 
 
 
-        MyMouseListener myMouseListener = new MyMouseListener(paintCanvas,appState,shapeslist);
+        MyMouseListener myMouseListener = new MyMouseListener(paintCanvas,appState);
         paintCanvas.addMouseListener(myMouseListener);
 
 //

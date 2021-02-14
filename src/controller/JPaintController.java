@@ -9,12 +9,12 @@ import view.interfaces.IUiModule;
 public class JPaintController implements IJPaintController {
     private final IUiModule uiModule;
     private final IApplicationState applicationState;
-    private final ShapeList shapeList;
+    ShapeList shapelist =  ShapeList.getInstance();
 
-    public JPaintController(IUiModule uiModule, IApplicationState applicationState, ShapeList shapeList) {
+    public JPaintController(IUiModule uiModule, IApplicationState applicationState) {
         this.uiModule = uiModule;
         this.applicationState = applicationState;
-        this.shapeList = shapeList;
+
     }
 
     @Override
@@ -30,8 +30,8 @@ public class JPaintController implements IJPaintController {
         uiModule.addEvent(EventName.CHOOSE_MOUSE_MODE, () -> applicationState.setActiveStartAndEndPointMode());
         uiModule.addEvent(EventName.UNDO, () -> new UndoCommand().runCommand());
         uiModule.addEvent(EventName.REDO, () -> new RedoCommand().runCommand());
-        uiModule.addEvent(EventName.DELETE, () -> new DeleteCommand(shapeList).runCommand());
-        uiModule.addEvent(EventName.COPY, () -> new CopiedShapes(shapeList.copySelected()));
-        uiModule.addEvent(EventName.PASTE, () -> new PasteShapeCommand(shapeList).runCommand());
+        uiModule.addEvent(EventName.DELETE, () -> new DeleteCommand(shapelist).runCommand());
+        uiModule.addEvent(EventName.COPY, () -> new CopiedShapes(shapelist.copySelected()));
+        uiModule.addEvent(EventName.PASTE, () -> new PasteShapeCommand(shapelist).runCommand());
     }
 }

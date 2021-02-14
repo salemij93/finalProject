@@ -3,10 +3,9 @@ package main;
 
 public class CreateShapeCommand implements ICommand, IUndoRedo{
 
-    private ShapeList shapeList;
+    ShapeList shapelist =  ShapeList.getInstance();
     private Shape newshape;
-    CreateShapeCommand(ShapeList shapeList, Shape newshape){
-        this.shapeList = shapeList;
+    CreateShapeCommand(Shape newshape){
         this.newshape = newshape;
 
     }
@@ -15,8 +14,8 @@ public class CreateShapeCommand implements ICommand, IUndoRedo{
 
     @Override
     public void runCommand() {
-        shapeList.addShape(newshape);
-        shapeList.drawAll();
+        shapelist.addShape(newshape);
+        shapelist.drawAll();
         CommandHistory.add(this);
 
     }
@@ -24,20 +23,20 @@ public class CreateShapeCommand implements ICommand, IUndoRedo{
     @Override
     public void undoCommand() {
         System.out.println("undo create");
-        shapeList.undrawAll();
-        System.out.println(shapeList.shapeListsize() + "before undraw");
-        shapeList.removeShape(newshape);
-        System.out.println(shapeList.shapeListsize()+ "after undraw");
-        shapeList.drawAll();
+        shapelist.undrawAll();
+        System.out.println(shapelist.shapeListsize() + "before undraw");
+        shapelist.removeShape(newshape);
+        System.out.println(shapelist.shapeListsize()+ "after undraw");
+        shapelist.drawAll();
 
     }
 
     @Override
     public void redoCommand() {
         System.out.println("redo create");
-        shapeList.addShape(newshape);
-        shapeList.drawAll();
-        System.out.println(shapeList.shapeListsize());
+        shapelist.addShape(newshape);
+        shapelist.drawAll();
+        System.out.println(shapelist.shapeListsize());
 
 
     }

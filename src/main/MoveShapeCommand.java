@@ -2,37 +2,36 @@ package main;
 
 public class MoveShapeCommand implements ICommand, IUndoRedo{
 
-    private ShapeList shapeList;
+    ShapeList shapelist =  ShapeList.getInstance();
     private int deltaX;
     private int deltaY;
-    MoveShapeCommand(ShapeList shapeList,int deltaX, int deltaY){
-        this.shapeList = shapeList;
+    MoveShapeCommand(int deltaX, int deltaY){
         this.deltaX = deltaX;
         this.deltaY = deltaY;
 
     }
     @Override
     public void runCommand() {
-        shapeList.undrawAll();
-        shapeList.moveSelected(deltaX, deltaY);
+        shapelist.undrawAll();
+        shapelist.moveSelected(deltaX, deltaY);
         System.out.println("moved");
-        shapeList.drawAll();
+        shapelist.drawAll();
         CommandHistory.add(this);
     }
 
     @Override
     public void undoCommand() {
-        shapeList.undrawAll();
-        shapeList.moveSelected(-deltaX, -deltaY);
+        shapelist.undrawAll();
+        shapelist.moveSelected(-deltaX, -deltaY);
         System.out.println("undo move");
-        shapeList.drawAll();
+        shapelist.drawAll();
     }
 
     @Override
     public void redoCommand() {
-        shapeList.undrawAll();
-        shapeList.moveSelected(deltaX, deltaY);
+        shapelist.undrawAll();
+        shapelist.moveSelected(deltaX, deltaY);
         System.out.println("redo move");
-        shapeList.drawAll();
+        shapelist.drawAll();
     }
 }
