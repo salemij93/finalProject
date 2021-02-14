@@ -190,6 +190,7 @@ public class ShapeList {
 
             this.addShape(shape);
         }
+        this.copied.clear();
     }
 
     public void removeCopied(ArrayList<IShape> shapeList){
