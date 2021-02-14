@@ -5,11 +5,10 @@ import java.util.ArrayList;
 public class PasteShapeCommand implements ICommand, IUndoRedo{
 
     ShapeList shapelist =  ShapeList.getInstance();
-    ArrayList<IShape> copied = new ArrayList<>();
+    private ArrayList<IShape> copied = new ArrayList<>();
 
     public void setCopied(){
-        ArrayList<IShape> copied = shapelist.copySelected();
-        System.out.println("copied items");
+        this.copied = shapelist.copySelected();
     }
     public ArrayList<IShape> getCopied(){
         return copied;
