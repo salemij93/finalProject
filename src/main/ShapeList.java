@@ -112,7 +112,8 @@ public class ShapeList {
     public void moveSelected(int deltaX, int deltaY) {
         for (int i = 0; i < shapes.size(); i++) {
             IShape shape = shapes.get(i);
-            if (shape.getState()) {
+            if (shape.getState() || shape.getMoved()) {
+                shape.updateMoved(true);
                 switch (shape.getshapeName()) {
                     case "RECTANGLE", "ELLIPSE" -> {
                         shape.setX1(shape.getX1() + deltaX);
@@ -131,6 +132,8 @@ public class ShapeList {
             }
         }
     }
+
+
 
     public ShapeList removeSelected(){
         ShapeList deleted = new ShapeList();

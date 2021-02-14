@@ -35,6 +35,7 @@ public class MyMouseListener extends MouseAdapter{
 
 
 
+
     public void mousePressed(MouseEvent e) {
         System.out.println("Mouse Pressed: ("
                 +e.getX()+", "+e.getY() +")");

@@ -3,6 +3,7 @@ package main;
 
 
 import java.awt.*;
+import java.util.ArrayList;
 
 public class Shape implements IShape{
 
@@ -12,18 +13,21 @@ public class Shape implements IShape{
     private int y1;
     private int y2;
     private int y3;
+
     private String shapeName;
     private String shapeColor;
     private String outlineColor;
     private String shadingType;
-        private Graphics2D graphics2d;
+    private Graphics2D graphics2d;
     private IState currentState;
+    private IState wasMoved;
     private final IState selectedState = new SelectedState();
     private final IState notSelectedState = new NotSelectedState();
 
     Shape(Graphics2D graphics2D){
         this.graphics2d = graphics2D;
         currentState = notSelectedState;
+        wasMoved = notSelectedState;
     }
 
 
@@ -243,9 +247,8 @@ public class Shape implements IShape{
         return currentState.selected();
     }
 
-    public int wasMoved(){
 
-    }
+
 
     public void selectedShape(){
         if(this.getState()){
@@ -287,6 +290,20 @@ public class Shape implements IShape{
                     graphics2d.drawPolygon(new int[]{x1, x2, x3}, new int[]{y1, y2, y3}, 3);
                 }
             }
+        }
+    }
+
+    @Override
+    public boolean getMoved() {
+        return wasMoved.selected();
+    }
+
+    @Override
+    public void updateMoved(boolean selected) {
+        if (selected){
+            wasMoved = selectedState;
+        }else{
+            wasMoved = notSelectedState;
         }
     }
 }

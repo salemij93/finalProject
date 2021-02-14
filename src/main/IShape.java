@@ -1,5 +1,7 @@
 package main;
 
+import java.util.ArrayList;
+
 public interface IShape {
     int getX1();
     int getX2();
@@ -19,6 +21,8 @@ public interface IShape {
     boolean getState();
     String getshapeName();
     void selectedShape();
-    int wasMoved();
+    boolean getMoved();
+    void updateMoved(boolean moved);
+
 
 }
