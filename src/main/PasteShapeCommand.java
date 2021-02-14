@@ -9,6 +9,7 @@ public class PasteShapeCommand implements ICommand, IUndoRedo{
 
     public void setCopied(){
         ArrayList<IShape> copied = shapelist.copySelected();
+        System.out.println("copied items");
     }
     public ArrayList<IShape> getCopied(){
         return copied;
