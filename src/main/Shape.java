@@ -127,6 +127,7 @@ public class Shape implements IShape{
     }
 
     public  void draw(){
+        this.selectedShape();
 
         switch (getShapeColor()){
             case "BLACK" -> graphics2d.setColor(Color.BLACK);
@@ -231,7 +232,7 @@ public class Shape implements IShape{
                 }
             }
         }
-        this.selectedShape();
+
 
 
 
@@ -283,7 +284,7 @@ public class Shape implements IShape{
             graphics2d.setStroke(stroke);
             switch (getshapeName()){
                 case "RECTANGLE" -> {
-                    graphics2d.drawRect(x1, y1, x2, y2);
+                    graphics2d.drawRect(x1+2, y1+2, x2-4, y2-4);
                 }
 
                 case "ELLIPSE" -> {
@@ -303,7 +304,7 @@ public class Shape implements IShape{
             graphics2d.setStroke(new BasicStroke(2));
             switch (getshapeName()){
                 case "RECTANGLE" -> {
-                    graphics2d.drawRect(x1, y1, x2, y2);
+                    graphics2d.drawRect(x1+2, y1+2, x2-4, y2-4);
 
                 }
 
