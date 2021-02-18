@@ -243,21 +243,17 @@ public class Shape implements IShape{
 
     public void undraw() {
         graphics2d.setColor(Color.WHITE);
-        graphics2d.setStroke(new BasicStroke(2));
         switch (getshapeName()) {
             case "RECTANGLE" -> {
                 graphics2d.fillRect(x1, y1, x2, y2);
-              //  graphics2d.drawRect(x1, y1, x2, y2);
             }
 
             case "ELLIPSE" -> {
                 graphics2d.fillOval(x1, y1, x2, y2);
-                graphics2d.drawOval(x1, y1, x2, y2);
             }
 
             case "TRIANGLE" -> {
                 graphics2d.fillPolygon(new int[]{x1, x2, x3}, new int[]{y1, y2, y3}, 3);
-                graphics2d.drawPolygon(new int[]{x1, x2, x3}, new int[]{y1, y2, y3}, 3);
             }
 
         }
