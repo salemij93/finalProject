@@ -281,18 +281,14 @@ public class Shape implements IShape{
             Stroke stroke = new BasicStroke(2, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 1, new float[]{9}, 0);
             graphics2d.setStroke(stroke);
             switch (getshapeName()){
-                case "RECTANGLE" -> {
+                case "RECTANGLE", "TRIANGLE" -> {
                     graphics2d.drawRect(x1+2, y1+2, x2-4, y2-4);
                 }
 
                 case "ELLIPSE" -> {
-                    graphics2d.drawOval(x1, y1, x2, y2);
+                    graphics2d.drawOval(x1+2, y1+2, x2-4, y2-4);
                 }
 
-                case "TRIANGLE" -> {
-
-                    graphics2d.drawPolygon(new int[]{x1, x2, x3}, new int[]{y1, y2, y3}, 3);
-                }
             }
 
 
@@ -301,20 +297,17 @@ public class Shape implements IShape{
             graphics2d.setColor(Color.WHITE);
             graphics2d.setStroke(new BasicStroke(2));
             switch (getshapeName()){
-                case "RECTANGLE" -> {
+                case "RECTANGLE", "TRIANGLE" -> {
                     graphics2d.drawRect(x1+2, y1+2, x2-4, y2-4);
                     this.draw();
 
                 }
 
                 case "ELLIPSE" -> {
-                    graphics2d.drawOval(x1, y1, x2, y2);
+                    graphics2d.drawOval(x1+2, y1+2, x2-4, y2-4);
+                    this.draw();
                 }
 
-                case "TRIANGLE" -> {
-
-                    graphics2d.drawPolygon(new int[]{x1, x2, x3}, new int[]{y1, y2, y3}, 3);
-                }
             }
         }
     }
