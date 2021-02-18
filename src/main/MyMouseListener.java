@@ -253,8 +253,7 @@ public class MyMouseListener extends MouseAdapter{
         }
         int[] rectA = new int[]{x1,y1,x2,y2 };
         shapelist.updateAll(rectA);
-        shapelist.undrawAll();
-        shapelist.drawAll();
+
 
 
         }
