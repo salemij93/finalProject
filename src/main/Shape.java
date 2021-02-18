@@ -241,8 +241,8 @@ public class Shape implements IShape{
             }
         }
 
-
-            this.selectedShape();
+        if(this.getState()){
+            this.selectedShape();}
 
 
 
