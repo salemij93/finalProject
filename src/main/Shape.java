@@ -4,6 +4,8 @@ package main;
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class Shape implements IShape{
 
@@ -289,7 +291,21 @@ public class Shape implements IShape{
                     graphics2d.drawOval(x1+2, y1+2, x2-4, y2-4);
                 }
                 case "TRIANGLE" ->{
-                    graphics2d.drawPolygon(new int[]{x1, x2, x3}, new int[]{y1, y2, y3}, 3);
+                    int x1 = this.getX1();
+                    int y1 = this.getY1();
+                    int x2 = this.getX2();
+                    int y2 = this.getY2();
+                    int x3 = this.getX3();
+                    int y3 = this.getY3();
+
+                    Integer[] xValues = {x1,x2,x3};
+                    Integer[] yValues = {y1,y2,y3};
+                    int minX = Collections.min(Arrays.asList(xValues));
+                    int minY = Collections.min(Arrays.asList(yValues));
+                    int maxX = Collections.max(Arrays.asList(xValues));
+                    int maxY = Collections.max(Arrays.asList(yValues));
+                    graphics2d.drawRect(minX+2, minY+2, maxX-4, maxY-4);
+
 
                 }
 
