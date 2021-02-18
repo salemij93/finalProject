@@ -108,8 +108,8 @@ public class ShapeList {
             } else {
                 shape.updateSate(false);
             }
-            shape.undraw();
-            shape.draw();
+//            shape.undraw();
+//            shape.draw();
             System.out.println(shapes.size());
 
 
