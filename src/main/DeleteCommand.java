@@ -17,7 +17,7 @@ public class DeleteCommand implements ICommand, IUndoRedo{
 
     @Override
     public void undoCommand() {
-        shapelist.addNewShape(deleted);
+        shapelist.addDeletedShape(deleted);
         shapelist.undrawAll();
         shapelist.drawAll();
         System.out.println("undo delete");

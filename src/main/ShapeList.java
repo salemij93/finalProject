@@ -204,6 +204,30 @@ public class ShapeList {
         this.copied.clear();
     }
 
+    public void addDeletedShape(ArrayList<IShape> shapeList){
+        for (int i = 0; i < shapeList.size(); i++) {
+            IShape shape = shapeList.get(i);
+            switch (shape.getshapeName()) {
+                case "RECTANGLE", "ELLIPSE" -> {
+                    shape.setX1(shape.getX1());
+                    shape.setY1(shape.getY1() );
+                }
+                case "TRIANGLE" -> {
+                    shape.setX1(shape.getX1() );
+                    shape.setY1(shape.getY1() );
+                    shape.setY2(shape.getY2() );
+                    shape.setY3(shape.getY3() );
+                    shape.setX2(shape.getX2() );
+                    shape.setX3(shape.getX3() );
+
+                }
+            }
+
+            this.addShape(shape);
+        }
+        this.copied.clear();
+    }
+
     public void removeCopied(ArrayList<IShape> shapeList){
         for (int i = 0; i < shapeList.size(); i++) {
             this.removeShape(shapeList.get(i));
