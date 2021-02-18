@@ -251,8 +251,15 @@ public class MyMouseListener extends MouseAdapter{
             y2 = Math.abs(y - y1);
 
         }
+        if (x1 == x){
+            x2=1;
+        }
+        if (y1 == y){
+            y2=1;
+        }
         int[] rectA = new int[]{x1,y1,x2,y2 };
         shapelist.updateAll(rectA);
+
 
 
 
