@@ -127,7 +127,7 @@ public class Shape implements IShape{
     }
 
     public  void draw(){
-        this.selectedShape();
+
 
         switch (getShapeColor()){
             case "BLACK" -> graphics2d.setColor(Color.BLACK);
@@ -232,7 +232,7 @@ public class Shape implements IShape{
                 }
             }
         }
-
+        this.selectedShape();
 
 
 
