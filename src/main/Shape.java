@@ -304,7 +304,7 @@ public class Shape implements IShape{
                     int minY = Collections.min(Arrays.asList(yValues));
                     int maxX = Collections.max(Arrays.asList(xValues));
                     int maxY = Collections.max(Arrays.asList(yValues));
-                    graphics2d.drawRect(minX+2, minY+2, maxX-4, maxY-4);
+                    graphics2d.drawRect(minX+2, minY+2, maxX-minX-4, maxY-minY-4);
 
 
                 }
