@@ -166,7 +166,6 @@ public class Shape implements IShape{
                 }
             }
             case "OUTLINE_AND_FILLED_IN" -> {
-                graphics2d.setStroke(new BasicStroke(2));
                 switch (getshapeName()) {
                     case "RECTANGLE" -> {
                         graphics2d.fillRect(x1,y1,x2,y2);
@@ -186,6 +185,8 @@ public class Shape implements IShape{
                             case "WHITE" -> graphics2d.setColor(Color.WHITE);
                             case "YELLOW" -> graphics2d.setColor(Color.YELLOW);
                         }
+                        graphics2d.setStroke(new BasicStroke(4));
+
                         graphics2d.drawRect(x1,y1,x2,y2);}
 
                     case "ELLIPSE" -> {graphics2d.fillOval(x1, y1, x2, y2);
