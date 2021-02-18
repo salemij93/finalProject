@@ -93,6 +93,7 @@ public class ShapeList {
 
     public void updateAll(int[] rectA) {
         for (int i = 0; i < shapes.size(); i++) {
+
             int[] rectB = shapeLocations(i);
             IShape shape = shapes.get(i);
             if (
@@ -110,7 +111,10 @@ public class ShapeList {
             }
             shape.selectedShape();
             System.out.println(shapes.size());
-
+            rectB[0]=0;
+            rectB[1]=0;
+            rectB[2]=0;
+            rectB[3]=0;
 
         }
     }
