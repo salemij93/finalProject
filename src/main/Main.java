@@ -27,17 +27,7 @@ public class Main {
         MyMouseListener myMouseListener = new MyMouseListener(paintCanvas,appState);
         paintCanvas.addMouseListener(myMouseListener);
 
-//
-//        // Outlined rectangle
-//        graphics2d.setStroke(new BasicStroke(5));
-//        graphics2d.setColor(Color.BLUE);
-//        graphics2d.drawRect(12, 13, 200, 400);
-//
-//        // Selected Shape
-//        Stroke stroke = new BasicStroke(3, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 1, new float[]{9}, 0);
-//        graphics2d.setStroke(stroke);
-//        graphics2d.setColor(Color.BLACK);
-//        graphics2d.drawRect(7, 8, 210, 410);
+
 
 
     }
