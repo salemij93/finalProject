@@ -171,6 +171,7 @@ public class Shape implements IShape{
             }
             case "OUTLINE_AND_FILLED_IN" -> {
                 switch (getshapeName()) {
+
                     case "RECTANGLE" -> {
                         graphics2d.setStroke(new BasicStroke(2));
 
@@ -194,7 +195,9 @@ public class Shape implements IShape{
 
                         graphics2d.drawRect(x1,y1,x2,y2);}
 
-                    case "ELLIPSE" -> {graphics2d.fillOval(x1, y1, x2, y2);
+                    case "ELLIPSE" -> {
+                        graphics2d.setStroke(new BasicStroke(2));
+                        graphics2d.fillOval(x1, y1, x2, y2);
                         switch (getoutlineColor()){
                             case "BLACK" -> graphics2d.setColor(Color.BLACK);
                             case "RED" -> graphics2d.setColor(Color.RED);
@@ -213,6 +216,8 @@ public class Shape implements IShape{
                         graphics2d.drawOval(x1,y1,x2,y2);}
 
                     case "TRIANGLE" -> {
+                        graphics2d.setStroke(new BasicStroke(2));
+
                         graphics2d.fillPolygon(new int[]{x1, x2, x3}, new int[]{y1, y2, y3}, 3);
                         switch (getoutlineColor()){
                             case "BLACK" -> graphics2d.setColor(Color.BLACK);
@@ -329,8 +334,21 @@ public class Shape implements IShape{
                 }
 
                 case "TRIANGLE" -> {
+                    int x1 = this.getX1();
+                    int y1 = this.getY1();
+                    int x2 = this.getX2();
+                    int y2 = this.getY2();
+                    int x3 = this.getX3();
+                    int y3 = this.getY3();
 
-                    graphics2d.drawPolygon(new int[]{x1, x2, x3}, new int[]{y1, y2, y3}, 3);
+                    Integer[] xValues = {x1,x2,x3};
+                    Integer[] yValues = {y1,y2,y3};
+                    int minX = Collections.min(Arrays.asList(xValues));
+                    int minY = Collections.min(Arrays.asList(yValues));
+                    int maxX = Collections.max(Arrays.asList(xValues));
+                    int maxY = Collections.max(Arrays.asList(yValues));
+                    graphics2d.drawRect(minX+2, minY+2, maxX-minX-4, maxY-minY-4);
+                    this.draw();
                 }
             }
         }
