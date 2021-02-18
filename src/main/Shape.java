@@ -127,8 +127,7 @@ public class Shape implements IShape{
     }
 
     public  void draw(){
-        if(this.getState()){
-        this.selectedShape();}
+
 
 
         switch (getShapeColor()){
@@ -235,7 +234,8 @@ public class Shape implements IShape{
             }
         }
 
-
+        if(this.getState()){
+            this.selectedShape();}
 
 
 
@@ -307,6 +307,7 @@ public class Shape implements IShape{
             switch (getshapeName()){
                 case "RECTANGLE" -> {
                     graphics2d.drawRect(x1+2, y1+2, x2-4, y2-4);
+                    this.draw();
 
                 }
 
