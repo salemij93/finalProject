@@ -304,6 +304,7 @@ public class Shape implements IShape{
             switch (getshapeName()){
                 case "RECTANGLE" -> {
                     graphics2d.drawRect(x1, y1, x2, y2);
+
                 }
 
                 case "ELLIPSE" -> {
