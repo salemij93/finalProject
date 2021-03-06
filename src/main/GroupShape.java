@@ -87,11 +87,19 @@ public class GroupShape implements IShape{
 
     @Override
     public void draw() {
+        graphics2d.setColor(Color.BLACK);
+        Stroke stroke = new BasicStroke(2, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 1, new float[]{9}, 0);
+        graphics2d.setStroke(stroke);
+        graphics2d.drawRect(x1+2, y1+2, x2-4, y2-4);
 
     }
 
     @Override
     public void undraw() {
+        graphics2d.setColor(Color.WHITE);
+        graphics2d.setStroke(new BasicStroke(2));
+        graphics2d.drawRect(x1+2, y1+2, x2-4, y2-4);
+
 
     }
 

@@ -268,6 +268,7 @@ public class ShapeList {
             newGroup.setX2(maxX);
             newGroup.setY1(minY);
             newGroup.setY2(maxY);
+            this.addShape(newGroup);
         }
 
 
