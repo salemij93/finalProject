@@ -248,7 +248,6 @@ public class ShapeList {
             if (shape.getState()){
                 shape.updateSate(true);
                 groups.add(shape);
-                shapes.add(shape);
 
             }
             shape.setGroups(groups);
