@@ -1,6 +1,7 @@
 package main;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 public class GroupShape implements IShape{
 
@@ -20,6 +21,7 @@ public class GroupShape implements IShape{
     private IState wasMoved;
     private final IState selectedState = new SelectedState();
     private final IState notSelectedState = new NotSelectedState();
+    private ArrayList<IShape> items= new ArrayList<IShape>;
 
     GroupShape(){
         this.currentState = notSelectedState;
@@ -127,17 +129,17 @@ public class GroupShape implements IShape{
 
     @Override
     public String getShapeColor() {
-        return null;
+        return "BLACK";
     }
 
     @Override
     public String getoutlineColor() {
-        return null;
+        return "BLACK";
     }
 
     @Override
     public String getshadingType() {
-        return null;
+        return "OUTLINE";
     }
 
     @Override
