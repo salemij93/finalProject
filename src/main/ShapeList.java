@@ -244,15 +244,15 @@ public class ShapeList {
             GroupShape newGroup = new GroupShape(shapes.get(0).getGraphics2d());
             int minX = shapes.get(0).getX1();
             int minY = shapes.get(0).getY1();
-            int maxX = shapes.get(0).getX2();
-            int maxY = shapes.get(0).getY2();
+            int maxX = shapes.get(0).getX2()+minX;
+            int maxY = shapes.get(0).getY2() + minY;
             for (int i = 0; i < shapes.size(); i++) {
                 IShape shape = shapes.get(i);
                 if(shape.getX1() < minX){
                     minX = shape.getX1();
                 }
                 if(shape.getX2() > maxX){
-                    maxX = shape.getX2()+minX + shape.getX1();
+                    maxX = shape.getX2()+minX;
                 }
                 if(shape.getY1() < minY){
                     minY = shape.getY1();
