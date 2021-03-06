@@ -29,41 +29,42 @@ public class GroupShape implements IShape{
     }
     @Override
     public int getX1() {
-        return 0;
+        return x1;
     }
 
     @Override
     public int getX2() {
-        return 0;
+        return x2;
     }
 
     @Override
     public int getX3() {
-        return 0;
+        return y3;
     }
 
     @Override
     public int getY1() {
-        return 0;
+        return y1;
     }
 
     @Override
     public int getY2() {
-        return 0;
+        return y2;
     }
 
     @Override
     public int getY3() {
-        return 0;
+        return y3;
     }
 
     @Override
     public void setY1(int y1) {
-
+        this.y1 = y1;
     }
 
     @Override
     public void setY2(int y2) {
+        this.y2 = y2;
 
     }
 
@@ -74,12 +75,12 @@ public class GroupShape implements IShape{
 
     @Override
     public void setX1(int x1) {
-
+        this.x1=x1;
     }
 
     @Override
     public void setX2(int x2) {
-
+        this.x2=x2;
     }
 
     @Override
