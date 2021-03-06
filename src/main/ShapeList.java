@@ -242,8 +242,24 @@ public class ShapeList {
     public void groupShapes(){
         if(shapes.size() >0) {
             GroupShape newGroup = new GroupShape(shapes.get(0).getGraphics2d());
+            int minX = shapes.get(0).getX1();
+            int minY = shapes.get(0).getY1();
+            int maxX = shapes.get(0).getX2();
+            int maxY = shapes.get(0).getY2();
             for (int i = 0; i < shapes.size(); i++) {
                 IShape shape = shapes.get(i);
+                if(shape.getX1() < minX){
+                    minX = shape.getX1();
+                }
+                if(shape.getX2() > maxX){
+                    maxX = shape.getX1();
+                }
+                if(shape.getY1() < minY){
+                    minY = shape.getY1();
+                }
+                if(shape.getY2() > maxY) {
+                    maxY = shape.getY2();
+                }
                 if (shape.getState()){
                     newGroup.addShapeToGroup(shape);
                 }
