@@ -1,13 +1,18 @@
 package main;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
+
 public class ShapeList {
 
     private static final ShapeList instance = new ShapeList();
-    private ShapeList(){};
+    private ShapeList(){
+
+
+    };
     public static ShapeList getInstance(){
         return instance;
     }
