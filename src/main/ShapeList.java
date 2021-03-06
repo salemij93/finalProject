@@ -251,14 +251,14 @@ public class ShapeList {
                 if(shape.getX1() < minX){
                     minX = shape.getX1();
                 }
-                if(shape.getX2() > maxX){
-                    maxX = shape.getX2();
+                if(shape.getX2() + shape.getX1() > maxX){
+                    maxX = shape.getX2()+shape.getX1();
                 }
                 if(shape.getY1() < minY){
                     minY = shape.getY1();
                 }
-                if(shape.getY2() > maxY) {
-                    maxY = shape.getY2();
+                if(shape.getY2() + shape.getY1()> maxY) {
+                    maxY = shape.getY2()+ shape.getY1();
                 }
                 if (shape.getState()){
                     newGroup.addShapeToGroup(shape);
