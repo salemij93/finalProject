@@ -247,7 +247,7 @@ public class MyMouseListener extends MouseAdapter{
             y2 = Math.abs(y-y1);
             y1 = y;
 
-        } else if (y1<y) {
+        }else if (y1<y) {
             y2 = Math.abs(y - y1);
 
         }
