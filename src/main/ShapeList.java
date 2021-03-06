@@ -241,7 +241,6 @@ public class ShapeList {
     }
 
     public void groupShapes(){
-       System.out.println("grouped");
         for (int i = 0; i < this.shapeListsize(); i++){
             IShape shape = this.getShape(i);
 
@@ -253,6 +252,7 @@ public class ShapeList {
             shape.setGroups(groups);
         }
         groups.clear();
+        System.out.println("grouped");
 
 
     }
