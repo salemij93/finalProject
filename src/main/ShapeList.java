@@ -4,11 +4,14 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class ShapeList {
 
     private static final ShapeList instance = new ShapeList();
+    private Integer count = 0;
     private ShapeList(){
 
 
@@ -19,8 +22,8 @@ public class ShapeList {
 
     ArrayList<IShape> shapes = new ArrayList<>();
     ArrayList<IShape> copied = new ArrayList<>();
-    ArrayList<IShape> groups = new ArrayList<>();
-
+    ArrayList<IShape> group = new ArrayList<>();
+    Map<Integer,ArrayList<IShape>> groups = new HashMap<>();
 
     public void addShape(IShape newshapes) {
         shapes.add(newshapes);
@@ -246,13 +249,14 @@ public class ShapeList {
 
             if (shape.getState()){
                 shape.updateSate(true);
-                groups.add(shape);
+                group.add(shape);
 
             }
 
         }
+        groups.put(count,group);
+        group.clear();
 
-        groups.clear();
         System.out.println("grouped");
 
 
