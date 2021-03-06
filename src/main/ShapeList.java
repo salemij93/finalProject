@@ -19,6 +19,7 @@ public class ShapeList {
 
     ArrayList<IShape> shapes = new ArrayList<>();
     ArrayList<IShape> copied = new ArrayList<>();
+    ArrayList<IShape> groups = new ArrayList<>();
 
 
     public void addShape(IShape newshapes) {
@@ -241,6 +242,19 @@ public class ShapeList {
 
     public void groupShapes(){
        System.out.println("grouped");
+        for (int i = 0; i < this.shapeListsize(); i++){
+            IShape shape = this.getShape(i);
+
+            if (shape.getState()){
+                shape.updateSate(true);
+                groups.add(shape);
+                shapes.add(shape);
+
+            }
+            shape.setGroups(groups);
+        }
+        groups.clear();
+
 
     }
 
