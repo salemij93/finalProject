@@ -21,7 +21,7 @@ public class GroupShape implements IShape{
     private IState wasMoved;
     private final IState selectedState = new SelectedState();
     private final IState notSelectedState = new NotSelectedState();
-    private ArrayList<IShape> items= new ArrayList<IShape>;
+    private ArrayList<IShape> items= new ArrayList<IShape>();
 
     GroupShape(){
         this.currentState = notSelectedState;
