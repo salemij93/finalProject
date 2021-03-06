@@ -255,6 +255,7 @@ public class ShapeList {
 
         }
         groups.put(count,group);
+        count++;
         group.clear();
 
         System.out.println("grouped");
