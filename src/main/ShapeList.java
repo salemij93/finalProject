@@ -264,7 +264,12 @@ public class ShapeList {
                     newGroup.addShapeToGroup(shape);
                 }
             }
+            newGroup.setX1(minX);
+            newGroup.setX2(maxX);
+            newGroup.setY1(minY);
+            newGroup.setY2(maxY);
         }
+
 
         System.out.println("grouped");
 
