@@ -9,6 +9,8 @@ import view.interfaces.IUiModule;
 public class JPaintController implements IJPaintController {
     private final IUiModule uiModule;
     private final IApplicationState applicationState;
+    ShapeList shapelist =  ShapeList.getInstance();
+
 
 
     public JPaintController(IUiModule uiModule, IApplicationState applicationState) {
@@ -33,7 +35,7 @@ public class JPaintController implements IJPaintController {
         uiModule.addEvent(EventName.DELETE, () -> new DeleteCommand().runCommand());
         uiModule.addEvent(EventName.COPY, () -> new CopiedShapesList().setCopied());
         uiModule.addEvent(EventName.PASTE, () -> new PasteShapeCommand().runCommand());
-        uiModule.addEvent(EventName.GROUP, () -> System.out.println("grouped"));
-        uiModule.addEvent(EventName.UNGROUP, () -> System.out.println("ungrouped"));
+        uiModule.addEvent(EventName.GROUP, () -> shapelist.groupShapes());
+        uiModule.addEvent(EventName.UNGROUP, () -> shapelist.ungroupShapes());
     }
 }

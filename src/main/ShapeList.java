@@ -234,4 +234,13 @@ public class ShapeList {
         }
     }
 
+    public void groupShapes(){
+       System.out.println("grouped");
+    }
+
+    public void ungroupShapes(){
+        System.out.println("ungrouped");
+    }
+
 }
+
