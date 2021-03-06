@@ -142,6 +142,10 @@ public class GroupShape implements IShape{
 
     @Override
     public Graphics2D getGraphics2d() {
-        return null;
+        return this.graphics2d;
+    }
+
+    public void addShapeToGroup(IShape newShape){
+        items.add(newShape);
     }
 }
