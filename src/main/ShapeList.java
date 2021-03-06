@@ -59,7 +59,7 @@ public class ShapeList {
         IShape shape = shapes.get(i);
         int[] rectB = new int[4];
         switch (shape.getshapeName()){
-            case "RECTANGLE", "ELLIPSE" ->{
+            case "RECTANGLE", "ELLIPSE", "Group"->{
 
                 rectB[0] = shape.getX1();
                 rectB[1] = shape.getY1();
