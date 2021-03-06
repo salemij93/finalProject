@@ -4,8 +4,8 @@ package main;
 public class CreateShapeCommand implements ICommand, IUndoRedo{
 
     ShapeList shapelist =  ShapeList.getInstance();
-    private Shape newshape;
-    CreateShapeCommand(Shape newshape){
+    private IShape newshape;
+    CreateShapeCommand(IShape newshape){
         this.newshape = newshape;
 
     }
