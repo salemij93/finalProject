@@ -12,10 +12,7 @@ public class GroupShape implements IShape{
     private int y2;
     private int y3;
 
-    private String shapeName;
-    private String shapeColor;
-    private String outlineColor;
-    private String shadingType;
+
     private Graphics2D graphics2d;
     private IState currentState;
     private IState wasMoved;
@@ -39,7 +36,7 @@ public class GroupShape implements IShape{
 
     @Override
     public int getX3() {
-        return y3;
+        return x3;
     }
 
     @Override
