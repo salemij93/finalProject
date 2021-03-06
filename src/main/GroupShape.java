@@ -101,7 +101,7 @@ public class GroupShape implements IShape{
 
     @Override
     public boolean getState() {
-        return false;
+        return currentState.selected();
     }
 
     @Override
