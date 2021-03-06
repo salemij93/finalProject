@@ -249,8 +249,9 @@ public class ShapeList {
                 groups.add(shape);
 
             }
-            shape.setGroups(groups);
+
         }
+
         groups.clear();
         System.out.println("grouped");
 
