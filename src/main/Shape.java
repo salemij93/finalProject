@@ -134,6 +134,10 @@ public class Shape implements IShape{
         return this.groups;
     }
 
+    public void setGroups(ArrayList<IShape> groups1){
+
+    }
+
     public  void draw(){
 
 

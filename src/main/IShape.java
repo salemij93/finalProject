@@ -32,5 +32,6 @@ public interface IShape {
 
     String getshadingType();
     Graphics2D getGraphics2d();
-     ArrayList<IShape> getGroups();
+    ArrayList<IShape> getGroups();
+    void setGroups(ArrayList<IShape> groups1);
 }
