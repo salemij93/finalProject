@@ -240,6 +240,10 @@ public class ShapeList {
     }
 
     public void groupShapes(){
+        if(shapes.size() >0){
+            GroupShape newGroup = new GroupShape(shapes.get(0).getGraphics2d());
+
+        }
         for (int i = 0; i < shapes.size(); i++) {
             IShape shape = shapes.get(i);
             if (shape.getState()){
