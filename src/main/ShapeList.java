@@ -10,7 +10,6 @@ import java.util.Collections;
 public class ShapeList {
 
     private static final ShapeList instance = new ShapeList();
-    private Integer count = 0;
     private ShapeList(){
 
 
