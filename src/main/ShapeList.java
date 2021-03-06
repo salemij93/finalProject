@@ -265,9 +265,9 @@ public class ShapeList {
                 }
             }
             newGroup.setX1(minX);
-            newGroup.setX2(maxX);
+            newGroup.setX2(maxX-minX);
             newGroup.setY1(minY);
-            newGroup.setY2(maxY);
+            newGroup.setY2(maxY-minY);
             this.addShape(newGroup);
         }
         this.drawAll();
