@@ -252,7 +252,7 @@ public class ShapeList {
                     minX = shape.getX1();
                 }
                 if(shape.getX2() > maxX){
-                    maxX = shape.getX1();
+                    maxX = shape.getX2();
                 }
                 if(shape.getY1() < minY){
                     minY = shape.getY1();
@@ -270,6 +270,7 @@ public class ShapeList {
             newGroup.setY2(maxY);
             this.addShape(newGroup);
         }
+        this.drawAll();
 
 
         System.out.println("grouped");
