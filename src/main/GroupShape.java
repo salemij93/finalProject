@@ -116,7 +116,7 @@ public class GroupShape implements IShape{
 
     @Override
     public boolean getMoved() {
-        return false;
+        return wasMoved.selected();
     }
 
     @Override
