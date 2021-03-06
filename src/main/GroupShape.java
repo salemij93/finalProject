@@ -20,8 +20,9 @@ public class GroupShape implements IShape{
     private final IState notSelectedState = new NotSelectedState();
     private ArrayList<IShape> items= new ArrayList<IShape>();
 
-    GroupShape(){
-        this.currentState = notSelectedState;
+    GroupShape(Graphics2D graphics2D){
+        this.graphics2d = graphics2D;
+        this.currentState = selectedState;
         this.wasMoved = notSelectedState;
     }
     @Override

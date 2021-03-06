@@ -240,7 +240,12 @@ public class ShapeList {
     }
 
     public void groupShapes(){
+        for (int i = 0; i < shapes.size(); i++) {
+            IShape shape = shapes.get(i);
+            if (shape.getState()){
 
+            }
+        }
 
         System.out.println("grouped");
 
