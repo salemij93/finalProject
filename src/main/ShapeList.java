@@ -130,7 +130,7 @@ public class ShapeList {
             if (shape.getState() || shape.getMoved()) {
                 shape.updateMoved(true);
                 switch (shape.getshapeName()) {
-                    case "RECTANGLE", "ELLIPSE" -> {
+                    case "RECTANGLE", "ELLIPSE", "Group"-> {
                         shape.setX1(shape.getX1() + deltaX);
                         shape.setY1(shape.getY1() + deltaY);
                     }
