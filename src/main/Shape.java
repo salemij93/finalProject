@@ -25,13 +25,11 @@ public class Shape implements IShape{
     private IState wasMoved;
     private final IState selectedState = new SelectedState();
     private final IState notSelectedState = new NotSelectedState();
-    private ArrayList<IShape> groups;
 
     Shape(Graphics2D graphics2D){
         this.graphics2d = graphics2D;
         currentState = notSelectedState;
         wasMoved = notSelectedState;
-        this.groups = new ArrayList<IShape>();
     }
 
     public Shape(IShape shape){
@@ -130,13 +128,7 @@ public class Shape implements IShape{
         this.y3 = y3;
     }
 
-    public ArrayList<IShape> getGroups(){
-        return this.groups;
-    }
 
-    public void setGroups(ArrayList<IShape> groups1){
-        this.groups = groups1;
-    }
 
     public  void draw(){
 
