@@ -298,6 +298,7 @@ public class ShapeList {
         }if (count > 0){
         IShape lastGroup = shapes.get(count);
         lastGroup.undraw();
+        shapes.remove(count);
         }
         this.undrawAll();
         this.drawAll();
