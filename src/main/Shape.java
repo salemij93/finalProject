@@ -128,7 +128,10 @@ public class Shape implements IShape{
         this.y3 = y3;
     }
 
-
+    @Override
+    public int getSize() {
+        return 0;
+    }
 
     public  void draw(){
 

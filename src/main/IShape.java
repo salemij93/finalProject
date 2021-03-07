@@ -9,6 +9,7 @@ public interface IShape {
     int getY1();
     int getY2();
     int getY3();
+    int getSize();
     void setY1(int y1);
     void setY2(int y2);
     void setY3(int y3);

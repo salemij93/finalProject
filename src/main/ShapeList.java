@@ -110,6 +110,11 @@ public class ShapeList {
                 System.out.println("select shape " + i);
 
                 shape.updateSate(true);
+                if(shape.getshapeName().equals("Group")){
+                    for (int j = 0; j < shape.getSize(); j++) {
+
+                    }
+                }
 
             } else {
                 shape.updateSate(false);
