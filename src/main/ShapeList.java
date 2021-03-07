@@ -169,6 +169,11 @@ public class ShapeList {
 
         for (int i = 0; i < this.shapeListsize(); i++){
             IShape shape = this.getShape(i);
+            if(shape.getshapeName()=="Group") {
+                GroupShape clone2 = new GroupShape(shape);
+                clone2 = GroupShape.newInstance(shape);
+                copied.add(clone2);
+            }
             Shape clone = new Shape(shape);
             clone = Shape.newInstance(shape);
             if (shape.getState()){

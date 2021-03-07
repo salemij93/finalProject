@@ -36,13 +36,14 @@ public class GroupShape implements IShape{
         this.graphics2d = shape.getGraphics2d();
         this.currentState = selectedState;
         this.wasMoved = notSelectedState;
-        this.items = new ArrayList<IShape>();
+        ArrayList<IShape> items2 = new ArrayList<IShape>();
         for (int i = 0; i < this.items.size(); i++){
             IShape newShape = this.getShape(i);
             Shape clone = new Shape(newShape);
             clone = Shape.newInstance(shape);
-            items.add(clone);
+            items2.add(clone);
         }
+        this.items = items2;
     }
     public static GroupShape newInstance(IShape shape){
         return new GroupShape(shape);
