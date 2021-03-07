@@ -292,7 +292,7 @@ public class ShapeList {
             IShape shape = shapes.get(i);
 
             if (shape.getshapeName().equals("Group")){
-                count++;
+                count+=i;
             }
 
         }if (count > 0) {
