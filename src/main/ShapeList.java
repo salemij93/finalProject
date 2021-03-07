@@ -287,7 +287,7 @@ public class ShapeList {
     }
 
     public void ungroupShapes(){
-        int count = -1;
+        int count = 0;
         for (int i = 0; i < shapes.size(); i++) {
             IShape shape = shapes.get(i);
 
@@ -295,9 +295,10 @@ public class ShapeList {
                 count++;
             }
 
-        }
+        }if (count > 0){
         IShape lastGroup = shapes.get(count);
         lastGroup.undraw();
+        }
         System.out.println("ungrouped");
     }
 
