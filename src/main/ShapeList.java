@@ -152,7 +152,8 @@ public class ShapeList {
 
     public ArrayList<IShape> removeSelected(){
         ArrayList<IShape> deleted = new ArrayList<>();
-        for (int i = 0; i < this.shapeListsize(); i++){
+        int j = this.shapeListsize();
+        for (int i = 0; i <j; i++){
             IShape shape = this.getShape(i);
             if (shape.getState()){
                 shape.undraw();
