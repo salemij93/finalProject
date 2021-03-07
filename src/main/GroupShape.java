@@ -105,7 +105,11 @@ public class GroupShape implements IShape{
 
     @Override
     public void updateSate(boolean selected) {
-
+        if (selected){
+            currentState = selectedState;
+        }else {
+            currentState = notSelectedState;
+        }
     }
 
     @Override
