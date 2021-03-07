@@ -130,7 +130,11 @@ public class GroupShape implements IShape{
 
     @Override
     public void updateMoved(boolean moved) {
-
+        if (moved){
+            wasMoved = selectedState;
+        }else{
+            wasMoved = notSelectedState;
+        }
     }
 
     @Override
