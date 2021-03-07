@@ -131,8 +131,16 @@ public class GroupShape implements IShape{
     @Override
     public void updateSate(boolean selected) {
         if (selected){
+            for (int i = 0; i < items.size(); i++) {
+                IShape shape = items.get(i);
+                shape.updateSate(true);
+            }
             currentState = selectedState;
         }else {
+            for (int i = 0; i < items.size(); i++) {
+                IShape shape = items.get(i);
+                shape.updateSate(false);
+            }
             currentState = notSelectedState;
         }
     }
