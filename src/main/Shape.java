@@ -133,6 +133,11 @@ public class Shape implements IShape{
         return 0;
     }
 
+    @Override
+    public IShape getShape(int i) {
+        return null;
+    }
+
     public  void draw(){
 
 
