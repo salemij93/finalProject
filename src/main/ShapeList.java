@@ -112,7 +112,7 @@ public class ShapeList {
                 shape.updateSate(true);
                 if(shape.getshapeName().equals("Group")){
                     for (int j = 0; j < shape.getSize(); j++) {
-                        shape.getShape(i).updateSate(true);
+                        shape.getShape(j).updateSate(true);
                     }
                 }
 
