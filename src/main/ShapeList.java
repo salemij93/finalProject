@@ -299,6 +299,8 @@ public class ShapeList {
         IShape lastGroup = shapes.get(count);
         lastGroup.undraw();
         }
+        this.undrawAll();
+        this.drawAll();
         System.out.println("ungrouped");
     }
 
