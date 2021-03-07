@@ -25,6 +25,31 @@ public class GroupShape implements IShape{
         this.currentState = selectedState;
         this.wasMoved = notSelectedState;
     }
+
+    public GroupShape(IShape shape){
+        this.x1 = shape.getX1();
+        this.x2 = shape.getX2();
+        this.x3 = shape.getX3();
+        this.y1 = shape.getY1();
+        this.y2 = shape.getY2();
+        this.y3 = shape.getY3();
+        this.graphics2d = shape.getGraphics2d();
+        this.currentState = selectedState;
+        this.wasMoved = notSelectedState;
+        for (int i = 0; i < this.items.size(); i++){
+            IShape newShape = this.getShape(i);
+            Shape clone = new Shape(newShape);
+            clone = Shape.newInstance(shape);
+            if (shape.getState()){
+                shape.updateSate(true);
+
+                copied.add(clone);
+            }
+        }
+    }
+    public static GroupShape newInstance(IShape shape){
+        return new GroupShape(shape);
+    }
     @Override
     public int getX1() {
         return x1;
@@ -175,6 +200,10 @@ public class GroupShape implements IShape{
 
     public void addShapeToGroup(IShape newShape){
         items.add(newShape);
+    }
+
+    public IShape getShape(int i){
+        return items.get(i);
     }
 
 }
