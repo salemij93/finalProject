@@ -219,7 +219,7 @@ public class ShapeList {
         for (int i = 0; i < shapeList.size(); i++) {
             IShape shape = shapeList.get(i);
             switch (shape.getshapeName()) {
-                case "RECTANGLE", "ELLIPSE" -> {
+                case "RECTANGLE", "ELLIPSE", "Group" -> {
                     shape.setX1(shape.getX1());
                     shape.setY1(shape.getY1() );
                 }
