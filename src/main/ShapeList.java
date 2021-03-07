@@ -295,10 +295,12 @@ public class ShapeList {
                 count++;
             }
 
-        }if (count > 0){
+        }if (count > 0) {
         IShape lastGroup = shapes.get(count);
+        if (lastGroup.getshapeName().equals("Group")){
         lastGroup.undraw();
         shapes.remove(count);
+        }
         }
         this.undrawAll();
         this.drawAll();
