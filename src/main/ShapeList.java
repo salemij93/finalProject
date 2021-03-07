@@ -288,14 +288,15 @@ public class ShapeList {
 
     public void ungroupShapes(){
         int count = 0;
-        for (int i = 0; i < shapes.size(); i++) {
+        for (int i = 0; i < shapes.size(); ++i) {
             IShape shape = shapes.get(i);
 
             if (shape.getshapeName().equals("Group")){
-                count+=i;
+                count=i;
             }
 
-        }if (count > 0) {
+        }
+        if (count > 0) {
         IShape lastGroup = shapes.get(count);
         if (lastGroup.getshapeName().equals("Group")){
         lastGroup.undraw();
