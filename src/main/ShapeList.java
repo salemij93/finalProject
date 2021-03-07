@@ -160,6 +160,9 @@ public class ShapeList {
                 deleted.add(shape);
             }
         }
+        for (int i = 0; i < deleted.size(); i++) {
+            shapes.remove(deleted.get(i));
+        }
 
         return deleted;
     }
