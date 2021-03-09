@@ -1,5 +1,7 @@
 package main;
 
+import view.interfaces.PaintCanvasBase;
+
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -12,6 +14,7 @@ public class GroupShape implements IShape{
     private int y2;
     private int y3;
 
+    private PaintCanvasBase paintCanvas;
 
     private Graphics2D graphics2d;
     private IState currentState;
@@ -20,8 +23,10 @@ public class GroupShape implements IShape{
     private final IState notSelectedState = new NotSelectedState();
     private ArrayList<IShape> items= new ArrayList<IShape>();
 
-    GroupShape(Graphics2D graphics2D){
-        this.graphics2d = graphics2D;
+    GroupShape(PaintCanvasBase PaintCanvas){
+        this.paintCanvas = PaintCanvas;
+
+        this.graphics2d = PaintCanvas.getGraphics2D();
         this.currentState = selectedState;
         this.wasMoved = notSelectedState;
     }

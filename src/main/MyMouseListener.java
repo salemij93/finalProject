@@ -73,7 +73,7 @@ public class MyMouseListener extends MouseAdapter{
 
     public void drawShape(String shapeType, int x, int y){
 
-        Shape newshape = new Shape(graphics2d);
+        Shape newshape = new Shape(paintCanvas);
 
         switch (appState.getActiveShapeShadingType().toString()){
             case "FILLED_IN" -> newshape.setshadingType("FILLED_IN");

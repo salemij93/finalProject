@@ -1,5 +1,7 @@
 package main;
 
+import view.interfaces.PaintCanvasBase;
+
 import java.awt.*;
 
 public interface IShape {
@@ -33,5 +35,6 @@ public interface IShape {
 
     String getshadingType();
     Graphics2D getGraphics2d();
+    PaintCanvasBase getPaintCanvasBase();
 
 }

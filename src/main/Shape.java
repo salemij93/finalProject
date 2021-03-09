@@ -2,6 +2,8 @@ package main;
 
 
 
+import view.interfaces.PaintCanvasBase;
+
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,14 +22,17 @@ public class Shape implements IShape{
     private String shapeColor;
     private String outlineColor;
     private String shadingType;
+    private PaintCanvasBase paintCanvas;
     private Graphics2D graphics2d;
     private IState currentState;
     private IState wasMoved;
     private final IState selectedState = new SelectedState();
     private final IState notSelectedState = new NotSelectedState();
 
-    Shape(Graphics2D graphics2D){
-        this.graphics2d = graphics2D;
+    Shape(PaintCanvasBase PaintCanvas){
+        this.paintCanvas = PaintCanvas;
+
+        this.graphics2d = PaintCanvas.getGraphics2D();
         currentState = notSelectedState;
         wasMoved = notSelectedState;
     }
