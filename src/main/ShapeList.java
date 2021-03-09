@@ -250,7 +250,7 @@ public class ShapeList {
 
     public void groupShapes(){
         if(shapes.size() >0) {
-            GroupShape newGroup = new GroupShape(shapes.get(0).getGraphics2d());
+            GroupShape newGroup = new GroupShape(shapes.get(0).getPaintCanvasBase());
             int minX = shapes.get(0).getX1();
             int minY = shapes.get(0).getY1();
             int maxX = shapes.get(0).getX2()+minX;

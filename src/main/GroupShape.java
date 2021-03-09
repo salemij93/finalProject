@@ -210,6 +210,8 @@ public class GroupShape implements IShape{
     public Graphics2D getGraphics2d() {
         return this.graphics2d;
     }
+    public PaintCanvasBase getPaintCanvasBase(){return this.paintCanvas;}
+
 
     public void addShapeToGroup(IShape newShape){
         items.add(newShape);

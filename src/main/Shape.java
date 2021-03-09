@@ -60,6 +60,7 @@ public class Shape implements IShape{
     public Graphics2D getGraphics2d() {
         return this.graphics2d;
     }
+    public PaintCanvasBase getPaintCanvasBase(){return this.paintCanvas;}
 
     public String getShapeColor() {
         return shapeColor;
