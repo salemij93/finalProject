@@ -13,7 +13,7 @@ public class ShapeList {
     private ShapeList(){
 
 
-    };
+    }
     public static ShapeList getInstance(){
         return instance;
     }
@@ -32,8 +32,7 @@ public class ShapeList {
     public void drawAll() {
 
 
-        for (int i = 0; i < shapes.size(); i++) {
-            IShape shape = shapes.get(i);
+        for (IShape shape : shapes) {
             shape.draw();
         }
 
