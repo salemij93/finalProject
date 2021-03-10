@@ -5,7 +5,6 @@ package main;
 import view.interfaces.PaintCanvasBase;
 
 import java.awt.*;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
