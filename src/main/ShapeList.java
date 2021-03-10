@@ -32,7 +32,8 @@ public class ShapeList {
     public void drawAll() {
 
 
-        for (IShape shape : shapes) {
+        for (int i = 0; i < shapes.size(); i++) {
+            IShape shape = shapes.get(i);
             shape.draw();
         }
 
